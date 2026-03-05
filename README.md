@@ -11,7 +11,7 @@ Maverick07x氏によるVLC Media Player用スキンの「MinimalX」を、デフ
 python3 build-vlt.py
 ```
 
-別名で出力する場合: `python3 build-vlt.py MinimalX_JPMod_VLC_2.6.2`
+別名で出力する場合: `python3 build-vlt.py 任意の名前`
 
 ## コミット前に自動ビルド（pre-commit フック）
 
