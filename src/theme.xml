@@ -145,6 +145,8 @@
     </Bitmap>
     <Font id="segoeuil" file="files/segoeuil.ttf" size="14"/>
     <Bitmap id="img_backgrounds_all" file="files/backgrounds.png" alphacolor="#FF00FF">
+        <SubBitmap id="img_cinemabar" x="0" y="0" height="10" width="650"/>
+        <SubBitmap id="img_cinemabar_corner" x="0" y="0" height="10" width="10"/>
         <SubBitmap id="img_finfo_650x27" x="0" y="10" height="27" width="650"/>
         <SubBitmap id="img_bottombar_650x50" x="0" y="60" height="50" width="650"/>
         <SubBitmap id="img_bottombar_650x10" x="0" y="60" height="10" width="650"/>
@@ -172,6 +174,9 @@
         <SubBitmap id="img_sett_posbar" x="0" y="100" height="50" width="250"/>
         <SubBitmap id="img_sett_posbar_hover" x="250" y="100" height="50" width="250"/>
         <SubBitmap id="img_sett_posbar_press" x="500" y="100" height="50" width="250"/>
+        <SubBitmap id="img_sett_cinema" x="0" y="200" height="50" width="250"/>
+        <SubBitmap id="img_sett_cinema_hover" x="250" y="200" height="50" width="250"/>
+        <SubBitmap id="img_sett_cinema_press" x="500" y="200" height="50" width="250"/>
         <SubBitmap id="img_sett_open" x="0" y="250" height="50" width="250"/>
         <SubBitmap id="img_sett_open_hover" x="250" y="250" height="50" width="250"/>
         <SubBitmap id="img_sett_open_press" x="500" y="250" height="50" width="250"/>
@@ -316,6 +321,9 @@
         <SubBitmap id="img_titlebar_unmax" x="139" y="0" height="29" width="46"/>
         <SubBitmap id="img_titlebar_unmax_hover" x="139" y="29" height="29" width="46"/>
         <SubBitmap id="img_titlebar_unmax_active" x="139" y="58" height="29" width="46"/>
+        <SubBitmap id="img_titlebar_back" x="185" y="0" height="29" width="46"/>
+        <SubBitmap id="img_titlebar_back_hover" x="185" y="29" height="29" width="46"/>
+        <SubBitmap id="img_titlebar_back_active" x="185" y="58" height="29" width="46"/>
     </Bitmap>
 
     <!--WINDOW START-->
@@ -325,11 +333,14 @@
 
             <!--VIDEO-->
 
-            <Video id="video_info" x="1" y="1" width="748" height="394" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and (posbar_big.isActive or posbar_small.isActive) and fileinfo_on.isActive"/>
-            <Video id="video_tb_big" x="1" y="29" width="748" height="393" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_big.isActive"/>
-            <Video id="video_tb_sml" x="1" y="29" width="748" height="398" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_small.isActive"/>
-            <Video id="video_big" x="1" y="1" width="748" height="421" rightbottom="rightbottom" visible="false"/>
-            <Video id="video_sml" x="1" y="1" width="748" height="426" rightbottom="rightbottom" visible="false"/>
+            <Video id="video_cinema" x="1" y="1" width="748" height="471" rightbottom="rightbottom" visible="(titlebar_off.isActive or titlebar_on.isActive or fileinfo_on.isActive) and hint1_off.isActive and (posbar_big.isActive or posbar_small.isActive) and cinema_on.isActive"/>
+            <Video id="video_cinema_hint" x="1" y="1" width="748" height="439" rightbottom="rightbottom" visible="(titlebar_off.isActive or titlebar_on.isActive or fileinfo_on.isActive) and hint1_on.isActive and (posbar_big.isActive or posbar_small.isActive) and cinema_on.isActive"/>
+            <Video id="video_cinema_info" x="1" y="1" width="748" height="439" rightbottom="rightbottom" visible="(fileinfo_on.isActive) and hint1_off.isActive and (posbar_big.isActive or posbar_small.isActive) and cinema_on.isActive"/>
+            <Video id="video_info" x="1" y="1" width="748" height="394" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and (posbar_big.isActive or posbar_small.isActive) and fileinfo_on.isActive and cinema_off.isActive"/>
+            <Video id="video_tb_big" x="1" y="29" width="748" height="393" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_big.isActive and titlebar_on.isActive and cinema_off.isActive"/>
+            <Video id="video_tb_sml" x="1" y="29" width="748" height="398" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_small.isActive and titlebar_on.isActive and cinema_off.isActive"/>
+            <Video id="video_big" x="1" y="1" width="748" height="421" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_big.isActive and titlebar_off.isActive and cinema_off.isActive"/>
+            <Video id="video_sml" x="1" y="1" width="748" height="426" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_small.isActive and titlebar_off.isActive and cinema_off.isActive"/>
 
             <!--ANCHORS-->
 
@@ -348,23 +359,23 @@
                     <Image id="main_cover_bg-01-1" x="-1238" y="-1300" height="3000px" image="img_bg_covers" rightbottom="rightbottom" visible="not vlc.hasVout"/>
                     <Image id="main_cover_bg-01-2" x="300" y="-1819" height="3200px" image="img_bg_covers" rightbottom="rightbottom" visible="not vlc.hasVout"/>
                     <Image id="main_cover_bg-01-3" x="1838" y="-1102" height="3100px" image="img_bg_covers" rightbottom="rightbottom" visible="not vlc.hasVout"/>
-                    <Image id="cover_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="false"/>
-                    <Image id="cover_audio_border" y="0" resize="scale" image="img_cover_border" visible="false"/>
-                    <Button id="cover_title" x="0" y="75" up="gif_cover_vlc" visible="false"/>
-                    <Button id="cover_title_color1" x="-81" y="75" up="gif_cover_color1" visible="false"/>
-                    <Button id="cover_title_color2" x="-81" y="75" up="gif_cover_color2" visible="false"/>
-                    <Button id="cover_title_color3" x="-81" y="75" up="gif_cover_color3" visible="false"/>
-                    <Text id="cover_track" text="$N " font="GenShinGothic-P" alignment="center" color="#ffffff" x="-50" y="218" width="300" visible="false"/>
+                    <Image id="cover_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="(not vlc.hasVout) and vlc.hasAudio and titlebar_off.isActive"/>
+                    <Image id="cover_audio_border" y="0" resize="scale" image="img_cover_border" visible="(not vlc.hasVout) and vlc.hasAudio and titlebar_off.isActive"/>
+                    <Button id="cover_title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and titlebar_off.isActive and (not vlc.hasAudio)"/>
+                    <Button id="cover_title_color1" x="-81" y="75" up="gif_cover_color1" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and titlebar_off.isActive and color_1.isActive"/>
+                    <Button id="cover_title_color2" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and titlebar_off.isActive and color_2.isActive"/>
+                    <Button id="cover_title_color3" x="-81" y="75" up="gif_cover_color3" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and titlebar_off.isActive and color_3.isActive"/>
+                    <Text id="cover_track" text="$N " font="GenShinGothic-P" alignment="center" color="#ffffff" x="-50" y="218" width="300" visible="vlc.hasAudio and (not vlc.hasVout) and titlebar_off.isActive"/>
                 </Panel>
             </Panel>
             <Panel id="cover_panel_tb" y="29" width="100%" height="393" rightbottom="rightbottom">
                 <Panel id="cover_panelX_tb" x="275" y="96" width="200" height="200" xkeepratio="true" ykeepratio="true">
-                    <Image id="cover_tb_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="(not vlc.hasVout) and vlc.hasAudio"/>
-                    <Image id="cover_tb_audio_border" y="0" resize="scale" image="img_cover_border" visible="(not vlc.hasVout) and vlc.hasAudio"/>
-                    <Button id="cover_tb-title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio)"/>
-                    <Button id="cover_tb_title_color1" x="-81" y="75" up="gif_cover_color1" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and color_1.isActive"/>
-                    <Button id="cover_tb_title_color2" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and color_2.isActive"/>
-                    <Button id="cover_tb_title_color3" x="-81" y="75" up="gif_cover_color3" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and color_3.isActive"/>
+                    <Image id="cover_tb_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="(not vlc.hasVout) and vlc.hasAudio and titlebar_on.isActive"/>
+                    <Image id="cover_tb_audio_border" y="0" resize="scale" image="img_cover_border" visible="(not vlc.hasVout) and vlc.hasAudio and titlebar_on.isActive"/>
+                    <Button id="cover_tb-title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and titlebar_on.isActive and (not vlc.hasAudio)"/>
+                    <Button id="cover_tb_title_color1" x="-81" y="75" up="gif_cover_color1" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and titlebar_on.isActive and color_1.isActive"/>
+                    <Button id="cover_tb_title_color2" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and titlebar_on.isActive and color_2.isActive"/>
+                    <Button id="cover_tb_title_color3" x="-81" y="75" up="gif_cover_color3" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and titlebar_on.isActive and color_3.isActive"/>
                 </Panel>
             </Panel>
             <Panel id="cover_panel_info" width="100%" height="395" rightbottom="rightbottom">
@@ -461,48 +472,89 @@
                 <Button id="main_show_volume_mute" up="img_volume_mute" down="img_volume_mute_press" over="img_volume_mute_hover" action="VolumeWindow.hide(); VolumeWindow.show()" x="50" lefttop="rightbottom" rightbottom="rightbottom" visible="vlc.isMute"/>
                 <Button id="main_close" up="img_close" down="img_close_press" over="img_close_hover" action="SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide(); vlc.quit();" x="100" lefttop="rightbottom" rightbottom="rightbottom"/>
                 <Button id="main_close_unmax" up="img_close" down="img_close_press" over="img_close_hover" action="SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide(); MainWindow.unmaximize(); vlc.quit();" x="100" lefttop="rightbottom" rightbottom="rightbottom" visible="MainWindow.isMaximized()"/>
+                <Button id="main_minimal" up="img_bottom_mini" down="img_bottom_mini_press" over="img_bottom_mini_hover" action="cinema.setLayout(cinema_on);" visible="titlebar_on.isActive" x="100" lefttop="rightbottom" rightbottom="rightbottom"/>
                 <Image id="bottom_corner" x="140" y="40" image="img_main_corner" action="resizeSE" action2="MainWindow.maximize()" lefttop="rightbottom" rightbottom="rightbottom" visible="not MainWindow.isMaximized()"/>
+            </Panel>
+
+            <!--CINEMA-->
+
+            <Panel id="cinema_bg_panel" width="100%" height="422" rightbottom="rightbottom">
+                <Panel id="cinema_bg_panelX" x="275" y="112" width="200" height="200" xkeepratio="true" ykeepratio="true">
+                    <Image id="cinema_cover_bg-01-0" x="-2776" y="-2016" height="3400px" image="img_bg_covers" rightbottom="rightbottom" visible="not vlc.hasVout and cinema_on.isActive"/>
+                    <Image id="cinema_cover_bg-01-1" x="-1238" y="-1300" height="3000px" image="img_bg_covers" rightbottom="rightbottom" visible="not vlc.hasVout and cinema_on.isActive"/>
+                    <Image id="cinema_cover_bg-01-2" x="300" y="-1819" height="3200px" image="img_bg_covers" rightbottom="rightbottom" visible="not vlc.hasVout and cinema_on.isActive"/>
+                    <Image id="cinema_cover_bg-01-3" x="1838" y="-1102" height="3100px" image="img_bg_covers" rightbottom="rightbottom" visible="not vlc.hasVout and cinema_on.isActive"/>
+                </Panel>
+            </Panel>
+            <Panel id="cinema_cover_panel" width="100%" height="472" rightbottom="rightbottom">
+                <Panel id="cinema_cover_panelX" x="275" y="136" width="200" height="200" xkeepratio="true" ykeepratio="true">
+                    <Image id="cinema_cover_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="cinema_on.isActive and (not vlc.hasVout) and vlc.hasAudio and hint1_off.isActive and (titlebar_on.isActive or titlebar_off.isActive)"/>
+                    <Image id="cinema_cover_border" y="0" resize="scale" image="img_cover_border" visible="cinema_on.isActive and (not vlc.hasVout) and vlc.hasAudio and hint1_off.isActive and (titlebar_on.isActive or titlebar_off.isActive)"/>
+                    <Image id="cinema_cover_title" x="0" y="75" image="img_cover_vlc" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and hint1_off.isActive and (titlebar_on.isActive or titlebar_off.isActive)"/>
+                    <Image id="cinema_cover_title_color1" x="-81" y="75" image="img_cover_color1" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and color_1.isActive and hint1_off.isActive and (titlebar_on.isActive or titlebar_off.isActive)"/>
+                    <Image id="cinema_cover_title_color2" x="-81" y="75" image="img_cover_color2" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and color_2.isActive and hint1_off.isActive and (titlebar_on.isActive or titlebar_off.isActive)"/>
+                    <Image id="cinema_cover_title_color3" x="-81" y="75" image="img_cover_color3" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and color_3.isActive and hint1_off.isActive and (titlebar_on.isActive or titlebar_off.isActive)"/>
+                    <Text id="cinema_cover_track" text="$N " font="GenShinGothic-P" alignment="center" color="#ffffff" x="-50" y="218" width="300" visible="cinema_on.isActive and vlc.hasAudio and (not vlc.hasVout) and hint1_off.isActive and (titlebar_on.isActive or titlebar_off.isActive)"/>
+                </Panel>
+            </Panel>
+            <Panel id="cinema_cover_info_panel" width="100%" height="440" rightbottom="rightbottom">
+                <Panel id="cinema_cover_info_panelX" x="275" y="120" width="200" height="200" xkeepratio="true" ykeepratio="true">
+                    <Image id="cinema_cover_info_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="cinema_on.isActive and (not vlc.hasVout) and vlc.hasAudio and (hint1_on.isActive or fileinfo_on.isActive)"/>
+                    <Image id="cinema_cover_info_border" y="0" resize="scale" image="img_cover_border" visible="cinema_on.isActive and (not vlc.hasVout) and vlc.hasAudio and (hint1_on.isActive or fileinfo_on.isActive)"/>
+                    <Image id="cinema_cover_info_title" x="0" y="75" image="img_cover_vlc" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and (hint1_on.isActive or fileinfo_on.isActive)"/>
+                    <Image id="cinema_cover_info_title_color1" x="-81" y="75" image="img_cover_color1" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and color_1.isActive and (hint1_on.isActive or fileinfo_on.isActive)"/>
+                    <Image id="cinema_cover_info_title_color2" x="-81" y="75" image="img_cover_color2" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and color_2.isActive and (hint1_on.isActive or fileinfo_on.isActive)"/>
+                    <Image id="cinema_cover_info_title_color3" x="-81" y="75" image="img_cover_color3" visible="cinema_on.isActive and (not vlc.hasVout) and (not vlc.hasAudio) and color_3.isActive and (hint1_on.isActive or fileinfo_on.isActive)"/>
+                </Panel>
+            </Panel>
+            <Panel id="cinema_bottom_panel" y="440" width="100%" height="42" lefttop="leftbottom" rightbottom="rightbottom">
+                <Image id="cinema_fileinfo_bg" width="100%" y="0" height="32" image="img_finfo_650x27" lefttop="leftbottom" rightbottom="rightbottom" visible="cinema_on.isActive and (fileinfo_on.isActive or hint1_on.isActive)"/>
+                <Text id="cinema_fileinfo" text="$F" font="GenShinGothic-P" alignment="center" color="#ffffff" x="10" y="5" width="730" lefttop="leftbottom" rightbottom="rightbottom" visible="cinema_on.isActive and fileinfo_on.isActive and hint1_off.isActive"/>
+                <Text id="cinema_fileinfo_text" text="Now Playing: -" font="GenShinGothic-P" alignment="center" color="#ffffff" x="10" y="5" width="730" lefttop="leftbottom" rightbottom="rightbottom" visible="cinema_on.isActive and fileinfo_on.isActive and hint1_off.isActive and (not vlc.hasAudio) and (not vlc.hasVout)"/>
+                <Image id="cinema_bottombar" width="100%" y="32" image="img_cinemabar" action="move" action2="hint1.setLayout(hint1_off); cinema.setLayout(cinema_off);" lefttop="leftbottom" rightbottom="rightbottom" visible="cinema_on.isActive"/>
+                <Image id="cinema_corner" x="740" y="32" image="img_cinemabar_corner" action="resizeSE" action2="hint1.setLayout(hint1_off); cinema.setLayout(cinema_off)" lefttop="rightbottom" rightbottom="rightbottom" visible="cinema_on.isActive and (not MainWindow.isMaximized())"/>
+                <Panel id="cinema_hint1_panel" x="275" y="0" width="200" height="200" xkeepratio="true" ykeepratio="true">
+                    <Button id="cinema_hint1_button" up="img_hint1_text" over="img_hint1_text_hover" down="img_hint1_text_active" y="0" x="-100" action="hint1.setLayout(hint1_off)" visible="cinema_on.isActive and hint1_on.isActive"/>
+                </Panel>
             </Panel>
 
             <!--TITLEBAR-->
 
             <Panel id="main_titlebar_panel" width="100%" height="29" rightbottom="righttop">
-                <Image id="main_titlebar_max" width="100%" x="0" y="0" image="img_bottombar_650x29" action="move" resize="scale" action2="MainWindow.maximize()" lefttop="lefttop" rightbottom="righttop"/>
-                <Image id="main_titlebar_unmax" width="100%" x="0" y="0" image="img_bottombar_650x29" action="move" resize="scale" action2="MainWindow.unmaximize()" lefttop="lefttop" rightbottom="righttop" visible="MainWindow.isMaximized()"/>
-                <Text id="titlebar_title" text="$N" font="GenShinGothic-P" alignment="left" color="#ffffff" x="12" y="4" width="590" rightbottom="righttop" visible="vlc.hasAudio" focus="false"/>
-                <Text id="titlebar_vlc" text="VLC media player" font="GenShinGothic-P" alignment="left" color="#ffffff" x="12" y="4" width="125" rightbottom="lefttop" visible="false" focus="false"/>
+                <Image id="main_titlebar_max" width="100%" x="0" y="0" image="img_bottombar_650x29" action="move" resize="scale" action2="MainWindow.maximize()" lefttop="lefttop" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive"/>
+                <Image id="main_titlebar_unmax" width="100%" x="0" y="0" image="img_bottombar_650x29" action="move" resize="scale" action2="MainWindow.unmaximize()" lefttop="lefttop" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive and MainWindow.isMaximized()"/>
+                <Text id="titlebar_title" text="$N" font="GenShinGothic-P" alignment="left" color="#ffffff" x="12" y="4" width="590" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive and vlc.hasAudio" focus="false"/>
+                <Text id="titlebar_vlc" text="VLC media player" font="GenShinGothic-P" alignment="left" color="#ffffff" x="12" y="4" width="125" rightbottom="lefttop" visible="(titlebar_on.isActive and cinema_off.isActive and (not vlc.hasAudio)) and false" focus="false"/>
+                <Button id="titlebar_back" up="img_titlebar_back" down="img_titlebar_back_active" over="img_titlebar_back_hover" action="cinema.setLayout(cinema_off)" y="0" x="1" rightbottom="lefttop" visible="false"/>
             </Panel>
 
             <!--BORDER-->
 
             <Panel id="main_border_panel" width="100%" height="482" rightbottom="rightbottom">
                 <Image id="main_border_left" height="100%" image="img_border_main" rightbottom="leftbottom"/>
-                <Image id="main_border_bot" width="100%" y="481" image="img_border_main" lefttop="leftbottom" rightbottom="rightbottom" action="resizeS" action2="MainWindow.maximize()"/>
+                <Image id="main_border_bot" width="100%" y="481" image="img_border_main" lefttop="leftbottom" rightbottom="rightbottom" action="resizeS" action2="MainWindow.maximize()" visible="cinema_off.isActive"/>
                 <Image id="main_border_bot_unmax" width="100%" y="481" image="img_border_main" lefttop="leftbottom" rightbottom="rightbottom" visible="MainWindow.isMaximized()"/>
                 <Image id="main_border_right" height="100%" image="img_border_main" x="749" lefttop="righttop" rightbottom="rightbottom"/>
                 <Image id="main_border_top" width="100%" image="img_border_main" rightbottom="righttop"/>
                 <Image id="main_border_top_unmax" width="100%" image="img_border_main" action2="MainWindow.unmaximize()" rightbottom="righttop" visible="MainWindow.isMaximized()"/>
-                <Image id="main_border_resize" y="432" height="50" width="1" image="img_border_main" x="749" lefttop="rightbottom" action="resizeE" action2="MainWindow.maximize()" rightbottom="rightbottom" visible="not MainWindow.isMaximized()"/>
+                <Image id="main_border_resize" y="432" height="50" width="1" image="img_border_main" x="749" lefttop="rightbottom" action="resizeE" action2="MainWindow.maximize()" rightbottom="rightbottom" visible="(not MainWindow.isMaximized()) and cinema_off.isActive"/>
             </Panel>
 
             <!--TITLEBAR-->
 
             <Panel id="main_titlebar_button_panel" width="100%" height="29" rightbottom="righttop">
-                <Button id="titlebar_close" up="img_titlebar_close" down="img_titlebar_close_active" over="img_titlebar_close_hover" action="SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide(); vlc.quit()" y="0" x="703" lefttop="righttop" rightbottom="righttop"/>
-                <Button id="titlebar_close_unmax" up="img_titlebar_close" down="img_titlebar_close_active" over="img_titlebar_close_hover" action="SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide(); MainWindow.unmaximize(); vlc.quit()" y="0" x="703" lefttop="righttop" rightbottom="righttop" visible="MainWindow.isMaximized()"/>
-                <Button id="titlebar_min" up="img_titlebar_min" down="img_titlebar_min_active" over="img_titlebar_min_hover" action="vlc.minimize()" y="0" x="611" lefttop="righttop" rightbottom="righttop"/>
-                <Button id="titlebar_max" up="img_titlebar_max" down="img_titlebar_max_active" over="img_titlebar_max_hover" action="MainWindow.maximize()" y="0" x="657" lefttop="righttop" rightbottom="righttop"/>
-                <Button id="titlebar_unmax" up="img_titlebar_unmax" down="img_titlebar_unmax_active" over="img_titlebar_unmax_hover" action="MainWindow.unmaximize()" y="0" x="657" lefttop="righttop" rightbottom="righttop" visible="MainWindow.isMaximized()"/>
+                <Button id="titlebar_close" up="img_titlebar_close" down="img_titlebar_close_active" over="img_titlebar_close_hover" action="SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide(); vlc.quit()" y="0" x="703" lefttop="righttop" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive"/>
+                <Button id="titlebar_close_unmax" up="img_titlebar_close" down="img_titlebar_close_active" over="img_titlebar_close_hover" action="SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide(); MainWindow.unmaximize(); vlc.quit()" y="0" x="703" lefttop="righttop" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive and MainWindow.isMaximized()"/>
+                <Button id="titlebar_min" up="img_titlebar_min" down="img_titlebar_min_active" over="img_titlebar_min_hover" action="vlc.minimize()" y="0" x="611" lefttop="righttop" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive"/>
+                <Button id="titlebar_max" up="img_titlebar_max" down="img_titlebar_max_active" over="img_titlebar_max_hover" action="MainWindow.maximize()" y="0" x="657" lefttop="righttop" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive"/>
+                <Button id="titlebar_unmax" up="img_titlebar_unmax" down="img_titlebar_unmax_active" over="img_titlebar_unmax_hover" action="MainWindow.unmaximize()" y="0" x="657" lefttop="righttop" rightbottom="righttop" visible="titlebar_on.isActive and cinema_off.isActive and MainWindow.isMaximized()"/>
             </Panel>
-
             <Button id="bg_start" up="img_bg_start" y="432" action="first.setLayout(first_off);" visible="first_on.isActive"/>
-            <Button id="bg_start_alt" up="img_bg_start2" y="0" action="first.setLayout(first_off);" visible="false"/>
+            <Button id="bg_start2" up="img_bg_start2" y="0" action="first.setLayout(first_off);" visible="false"/>
         </Layout>
     </Window>
 
-
     <!--PLAYLIST WINDOW-->
-
 
     <Window id="PlaylistWindow" position="Center" visible="false">
         <Layout id="PlaylistFrame" width="750" height="482" minwidth="650" maxwidth="6000" minheight="376" maxheight="4000">
@@ -539,8 +591,11 @@
                 <Image id="sett_aot_check_sml" y="5" x="200" image="img_sett_check" visible="vlc.isOnTop and posbar_small.isActive"/>
                 <Button id="sett_goto_wizard_big" up="img_sett_open" down="img_sett_open_press" over="img_sett_open_hover" action="dialogs.streamingWizard(); SettingsWindow.hide();" y="50" lefttop="righttop" rightbottom="righttop" visible="posbar_big.isActive"/>
                 <Button id="sett_goto_wizard_sml" up="img_sett_open" down="img_sett_open_press" over="img_sett_open_hover" action="dialogs.streamingWizard(); SettingsWindow.hide();" y="55" lefttop="righttop" rightbottom="righttop" visible="posbar_small.isActive"/>
+                <Button id="sett_goto_cinema_big" up="img_sett_cinema" down="img_sett_cinema_press" over="img_sett_cinema_hover" action="cinema.setLayout(cinema_on); SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide();" y="100" lefttop="righttop" rightbottom="righttop" visible="posbar_big.isActive"/>
+                <Button id="sett_goto_cinema_sml" up="img_sett_cinema" down="img_sett_cinema_press" over="img_sett_cinema_hover" action="cinema.setLayout(cinema_on); SettingsWindow.hide(); PlaylistWindow.hide(); VolumeWindow.hide();" y="105" lefttop="righttop" rightbottom="righttop" visible="posbar_small.isActive"/>
 
                 <!--sett_1-->
+
                 <Button id="sett_down_big" up="img_sett_down" down="img_sett_down_press" over="img_sett_down_hover" action="sett.setLayout(sett_1)" y="150" visible="posbar_big.isActive"/>
                 <Button id="sett_down_sml" up="img_sett_down" down="img_sett_down_press" over="img_sett_down_hover" action="sett.setLayout(sett_1)" y="155" visible="posbar_small.isActive"/>
                 <Button id="sett_up_big" y="0" up="img_sett_up" down="img_sett_up_press" over="img_sett_up_hover" action="sett.setLayout(sett_0)" visible="sett_1.isActive and posbar_big.isActive"/>
@@ -553,17 +608,23 @@
                 <Button id="sett_goto_colors_sml" up="img_sett_color" down="img_sett_color_press" over="img_sett_color_hover" action="sett.setLayout(sett_2)" y="130" visible="sett_1.isActive and posbar_small.isActive"/>
 
                 <!--sett_3-->
+
                 <Button id="sett_upto_sett1_big" y="0" up="img_sett_up" down="img_sett_up_press" over="img_sett_up_hover" action="sett.setLayout(sett_1)" visible="(sett_2.isActive or sett_3.isActive) and posbar_big.isActive"/>
                 <Button id="sett_upto_sett1_sml" y="5" up="img_sett_up" down="img_sett_up_press" over="img_sett_up_hover" action="sett.setLayout(sett_1)" visible="(sett_2.isActive or sett_3.isActive) and posbar_small.isActive"/>
-                <Checkbox id="sett_fileinfo_text_big" y="75" state="fileinfo_on.isActive" up1="img_sett_infobar" up2="img_sett_infobar" down1="img_sett_infobar_press" down2="img_sett_infobar_press" over1="img_sett_infobar_hover" over2="img_sett_infobar_hover" action1="titlebar.setLayout(fileinfo_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_on); SettingsWindow.hide();" visible="sett_3.isActive and posbar_big.isActive"/>
-                <Checkbox id="sett_fileinfo_text_sml" y="80" state="fileinfo_on.isActive" up1="img_sett_infobar" up2="img_sett_infobar" down1="img_sett_infobar_press" down2="img_sett_infobar_press" over1="img_sett_infobar_hover" over2="img_sett_infobar_hover" action1="titlebar.setLayout(fileinfo_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_on); SettingsWindow.hide();" visible="sett_3.isActive and posbar_small.isActive"/>
+                <Checkbox id="sett_fileinfo_text_big" y="75" state="fileinfo_on.isActive" up1="img_sett_infobar" up2="img_sett_infobar" down1="img_sett_infobar_press" down2="img_sett_infobar_press" over1="img_sett_infobar_hover" over2="img_sett_infobar_hover" action1="titlebar.setLayout(fileinfo_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_off); SettingsWindow.hide();" visible="sett_3.isActive and posbar_big.isActive"/>
+                <Checkbox id="sett_fileinfo_text_sml" y="80" state="fileinfo_on.isActive" up1="img_sett_infobar" up2="img_sett_infobar" down1="img_sett_infobar_press" down2="img_sett_infobar_press" over1="img_sett_infobar_hover" over2="img_sett_infobar_hover" action1="titlebar.setLayout(fileinfo_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_off); SettingsWindow.hide();" visible="sett_3.isActive and posbar_small.isActive"/>
                 <Image id="sett_fileinfo_check_big" x="200" y="75" image="img_sett_check" visible="sett_3.isActive and fileinfo_on.isActive and posbar_big.isActive"/>
                 <Image id="sett_fileinfo_check_sml" x="200" y="80" image="img_sett_check" visible="sett_3.isActive and fileinfo_on.isActive and posbar_small.isActive"/>
                 <Checkbox id="sett_posbar_text_big" y="125" state="posbar_big.isActive" up1="img_sett_posbar" up2="img_sett_posbar" down1="img_sett_posbar_press" down2="img_sett_posbar_press" over1="img_sett_posbar_hover" over2="img_sett_posbar_hover" action1="posbar.setLayout(posbar_big); SettingsWindow.hide();" action2="posbar.setLayout(posbar_small); SettingsWindow.hide();" visible="sett_3.isActive and posbar_big.isActive"/>
                 <Checkbox id="sett_posbar_text_sml" y="130" state="posbar_big.isActive" up1="img_sett_posbar" up2="img_sett_posbar" down1="img_sett_posbar_press" down2="img_sett_posbar_press" over1="img_sett_posbar_hover" over2="img_sett_posbar_hover" action1="posbar.setLayout(posbar_big); SettingsWindow.hide();" action2="posbar.setLayout(posbar_small); SettingsWindow.hide();" visible="sett_3.isActive and posbar_small.isActive"/>
                 <Image id="sett_posbar_check" x="200" y="125" image="img_sett_check" visible="sett_3.isActive and posbar_big.isActive"/>
+                <Checkbox id="sett_border_text_big" y="25" state="titlebar_on.isActive" up1="img_sett_border" up2="img_sett_border" down1="img_sett_border_press" down2="img_sett_border_press" over1="img_sett_border_hover" over2="img_sett_border_hover" action1="titlebar.setLayout(titlebar_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_off); SettingsWindow.hide();" visible="sett_3.isActive and posbar_big.isActive"/>
+                <Checkbox id="sett_border_text_sml"  y="30" state="titlebar_on.isActive" up1="img_sett_border" up2="img_sett_border" down1="img_sett_border_press" down2="img_sett_border_press" over1="img_sett_border_hover" over2="img_sett_border_hover" action1="titlebar.setLayout(titlebar_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_off); SettingsWindow.hide();" visible="sett_3.isActive and posbar_small.isActive"/>
+                <Image id="sett_border_check_big" x="200" y="25" image="img_sett_check" visible="sett_3.isActive and titlebar_on.isActive and posbar_big.isActive"/>
+                <Image id="sett_border_check_sml" x="200" y="30" image="img_sett_check" visible="sett_3.isActive and titlebar_on.isActive and posbar_small.isActive"/>
 
                 <!--sett_2-->
+
                 <Button id="sett_color1_big" up="img_sett_color1" down="img_sett_color1_press" over="img_sett_color1_hover" action="color.setLayout(color_1); SettingsWindow.hide();" y="25" visible="sett_2.isActive and posbar_big.isActive"/>
                 <Button id="sett_color1_sml" up="img_sett_color1" down="img_sett_color1_press" over="img_sett_color1_hover" action="color.setLayout(color_1); SettingsWindow.hide();" y="30" visible="sett_2.isActive and posbar_small.isActive"/>
                 <Image id="sett_color1_check_big" x="200" y="25" image="img_sett_check" visible="sett_2.isActive and color_1.isActive and posbar_big.isActive"/>
@@ -579,7 +640,9 @@
                 <Button id="sett_hide_color1" y="195" x="110" up="img_color1_settingson" over="img_color1_settingson_hover" down="img_color1_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom" visible="color_1.isActive"/>
                 <Button id="sett_hide_color2" y="195" x="110" up="img_color2_settingson" over="img_color2_settingson_hover" down="img_color2_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom" visible="color_2.isActive"/>
                 <Button id="sett_hide_color3" y="195" x="110" up="img_color3_settingson" over="img_color3_settingson_hover" down="img_color3_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom" visible="color_3.isActive"/>
+
                 <!--sett-border-->
+
                 <Image id="sett_border_icon" y="244" x="110" lefttop="rightbottom" image="img_border_main" width="50"/>
             </Panel>
         </Layout>
@@ -633,11 +696,19 @@
         </Layout>
         <Layout id="fileinfo_on" width="650" height="360">
         </Layout>
+        <Layout id="titlebar_off" width="650" height="360">
+        </Layout>
     </Window>
     <Window id="hint1" visible="false" dragdrop="false" playondrop="false">
         <Layout id="hint1_off" width="650" height="360">
         </Layout>
         <Layout id="hint1_on" width="650" height="360">
+        </Layout>
+    </Window>
+    <Window id="cinema" visible="false" dragdrop="false" playondrop="false">
+        <Layout id="cinema_on" width="650" height="360">
+        </Layout>
+        <Layout id="cinema_off" width="650" height="360">
         </Layout>
     </Window>
     <Window id="posbar" visible="false" dragdrop="false" playondrop="false">
@@ -763,5 +834,4 @@
             </Panel>
         </Layout>
     </Window>
-
 </Theme>
