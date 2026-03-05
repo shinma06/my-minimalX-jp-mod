@@ -207,7 +207,7 @@
         <SubBitmap id="img_mute_press" x="500" y="350" height="50" width="50"/>
         <SubBitmap id="img_pl_slider_bg" x="0" y="0" height="200" width="10"/>
     </Bitmap>
-    <Bitmap id="img_settings_all" file="files/menu_part2_all.png" alphacolor="#FF00FF">
+    <Bitmap id="img_settings_part2_all" file="files/menu_part2_all.png" alphacolor="#FF00FF">
         <SubBitmap id="img_sett_vlc" x="0" y="0" height="50" width="250"/>
         <SubBitmap id="img_sett_vlc_hover" x="250" y="0" height="50" width="250"/>
         <SubBitmap id="img_sett_vlc_press" x="500" y="0" height="50" width="250"/>
@@ -231,13 +231,13 @@
     </Bitmap>
     <Bitmap id="img_bg_start" file="files/start.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_bg_start2" file="files/start2.png" alphacolor="#FF00FF"/>
-    <Bitmap id="img_bg_covers" file="files/bg_covers_04.gif" alphacolor="FF00FF"/>
+    <Bitmap id="img_bg_covers" file="files/bg_covers_04.gif" alphacolor="#FF00FF"/>
     <Bitmap id="slider_bg_all" file="files/colors_aio/slider_bg_8200_all.png" alphacolor="#FF00FF">
         <SubBitmap id="img_slider_color1_pos" x="0" y="0" height="5" width="8200"/>
         <SubBitmap id="img_slider_color2_pos" x="0" y="10" height="5" width="8200"/>
         <SubBitmap id="img_slider_color3_pos" x="0" y="20" height="5" width="8200"/>
     </Bitmap>
-    <Bitmap id="slider_bg_all" file="files/colors_aio/slider_vol_all.png" alphacolor="#FF00FF">
+    <Bitmap id="slider_vol_all" file="files/colors_aio/slider_vol_all.png" alphacolor="#FF00FF">
         <SubBitmap id="img_slider_color1_vol" x="0" y="0" height="20" width="200"/>
         <SubBitmap id="img_slider_color2_vol" x="0" y="20" height="20" width="200"/>
         <SubBitmap id="img_slider_color3_vol" x="0" y="40" height="20" width="200"/>
@@ -338,7 +338,7 @@
             <Anchor id="main_anchor_X10_Y356" x="10" y="356" priority="3" lefttop="leftbottom"/>
             <Anchor id="main_anchor_X550_Y356" x="550" y="356" priority="3" lefttop="rightbottom"/>
             <Anchor id="main_anchor_X640_Y356" x="640" y="356" priority="3" lefttop="rightbottom"/>
-            <Anchor id="main_anchor_X640_Y356" x="375" y="482" priority="3" lefttop="leftbottom"/>
+            <Anchor id="main_anchor_X375_Y482" x="375" y="482" priority="3" lefttop="leftbottom"/>
 
             <!--COVERS-->
 
@@ -478,10 +478,10 @@
             <Panel id="main_border_panel" width="100%" height="482" rightbottom="rightbottom">
                 <Image id="main_border_left" height="100%" image="img_border_main" rightbottom="leftbottom"/>
                 <Image id="main_border_bot" width="100%" y="481" image="img_border_main" lefttop="leftbottom" rightbottom="rightbottom" action="resizeS" action2="MainWindow.maximize()"/>
-                <Image id="main_border_bot_unmax" width="100%" y="481" image="img_border_main" lefttop="leftbottom" rightbottom="rightbottom" visible="MainWindow.isMaximized"/>
+                <Image id="main_border_bot_unmax" width="100%" y="481" image="img_border_main" lefttop="leftbottom" rightbottom="rightbottom" visible="MainWindow.isMaximized()"/>
                 <Image id="main_border_right" height="100%" image="img_border_main" x="749" lefttop="righttop" rightbottom="rightbottom"/>
                 <Image id="main_border_top" width="100%" image="img_border_main" rightbottom="righttop"/>
-                <Image id="main_border_top_unmax" width="100%" image="img_border_main" action2="MainWindow.unmaximize()" rightbottom="righttop" visible="MainWindow.isMaximized"/>
+                <Image id="main_border_top_unmax" width="100%" image="img_border_main" action2="MainWindow.unmaximize()" rightbottom="righttop" visible="MainWindow.isMaximized()"/>
                 <Image id="main_border_resize" y="432" height="50" width="1" image="img_border_main" x="749" lefttop="rightbottom" action="resizeE" action2="MainWindow.maximize()" rightbottom="rightbottom" visible="not MainWindow.isMaximized()"/>
             </Panel>
 
@@ -710,7 +710,7 @@
                     <Slider id="fs_volume_color1_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_1.isActive" up="img_handle_color1" down="img_handle_white" over="img_handle_color1_hover"/>
                     <Slider id="fs_volume_color2_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_2.isActive" up="img_slider_color2_vol" down="img_slider_color2_vol" over="img_slider_color2_vol"/>
                     <Slider id="fs_volume_color2_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_2.isActive" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover"/>
-                    <Slider id="fs_volume_color3_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_3.isActive" up="img_slider_color3_vol" down="img_slider_color1_vol" over="img_slider_color3_vol"/>
+                    <Slider id="fs_volume_color3_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_3.isActive" up="img_slider_color3_vol" down="img_slider_color3_vol" over="img_slider_color3_vol"/>
                     <Slider id="fs_volume_color3_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_3.isActive" up="img_handle_color3" down="img_handle_white" over="img_handle_color3_hover"/>
                     <Slider id="fs_volume_mute_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="vlc.isMute" up="img_slider_mute" down="img_slider_mute" over="img_slider_mute"/>
                     <Slider id="fs_volume_mute_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="vlc.isMute" up="img_pl_slider_press" down="img_handle_white" over="img_pl_slider_hover"/>
