@@ -1,8 +1,8 @@
 <!DOCTYPE Theme PUBLIC "-//VideoLAN//DTD VLC Skins V2.0//EN" "skin.dtd">
 <Theme version="2.0">
-    <ThemeInfo name="MinimalX JPMod - V2.6.2" author="rexent_gx" email="rexen-tk@rexlab.tech" webpage="http://rexlab.tech/"/>
+    <ThemeInfo name="MinimalX JPMod - 1色固定" author="rexent_gx" email="rexen-tk@rexlab.tech" webpage="http://rexlab.tech/"/>
 
-    <!-- Created using the VLC Skin Editor 0.8.6.dev (http://www.videolan.org/vlc/skineditor.html)-->
+    <!-- アクセント色は1色固定（シアン）。色切り替えなし。Created using the VLC Skin Editor 0.8.6.dev -->
 
     <Font id="GenShinGothic-P" file="files/GenShinGothic-P-Regular.ttf" size="14"/>
     <Bitmap id="img_blank_all" file="files/blank_all.png" alphacolor="#FF00FF">
@@ -10,7 +10,7 @@
         <SubBitmap id="img_playtree_blank" x="0" y="0" height="10" width="8"/>
     </Bitmap>
     <Bitmap id="img_main_corner" file="files/corner.png" alphacolor="#FF00FF"/>
-    <!-- シアン固定: color2 (blue) のみ使用 -->
+    <!-- アクセント色: 1色固定（シアン）。以下はそのための Bitmap 定義。id の color2 はオリジナルアセット名の名残 -->
     <Bitmap id="img_color2_icons_all" file="files/colors_aio/bottom_blue_all.png" alphacolor="#FF00FF">
         <SubBitmap id="img_color2_cont1" x="0" y="0" height="50" width="50"/>
         <SubBitmap id="img_color2_cont1_hover" x="0" y="50" height="50" width="50"/>
@@ -505,6 +505,7 @@
         <Layout id="first_on" width="1" height="1">
         </Layout>
     </Window>
+    <!-- アクセント用 Window: 1色固定のため Layout は1つのみ。id はエンジン互換のため color / color_2 のまま -->
     <Window id="color" visible="false" dragdrop="false" playondrop="false">
         <Layout id="color_2" width="1" height="1">
         </Layout>
