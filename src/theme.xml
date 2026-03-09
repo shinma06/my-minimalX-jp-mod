@@ -10,32 +10,7 @@
         <SubBitmap id="img_playtree_blank" x="0" y="0" height="10" width="8"/>
     </Bitmap>
     <Bitmap id="img_main_corner" file="files/corner.png" alphacolor="#FF00FF"/>
-    <Bitmap id="img_color3_icons_all" file="files/colors_aio/bottom_green_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_color3_cont1" x="0" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_cont1_hover" x="0" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_cont1_press" x="0" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color3_contall" x="50" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_contall_hover" x="50" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_contall_press" x="50" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color3_shuffon" x="100" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_shuffon_hover" x="100" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_shuffon_press" x="100" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color3_recon" x="150" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_recon_hover" x="150" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_recon_press" x="150" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color3_playlist" x="200" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_playlist_hover" x="200" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_playlist_press" x="200" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color3_volumeon" x="250" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_volumeon_hover" x="250" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_volumeon_press" x="250" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color3_settingson" x="300" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_settingson_hover" x="300" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_settingson_press" x="300" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color3_mute" x="350" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color3_mute_hover" x="350" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color3_mute_press" x="350" y="100" height="50" width="50"/>
-    </Bitmap>
+    <!-- シアン固定: color2 (blue) のみ使用 -->
     <Bitmap id="img_color2_icons_all" file="files/colors_aio/bottom_blue_all.png" alphacolor="#FF00FF">
         <SubBitmap id="img_color2_cont1" x="0" y="0" height="50" width="50"/>
         <SubBitmap id="img_color2_cont1_hover" x="0" y="50" height="50" width="50"/>
@@ -61,32 +36,6 @@
         <SubBitmap id="img_color2_mute" x="350" y="0" height="50" width="50"/>
         <SubBitmap id="img_color2_mute_hover" x="350" y="50" height="50" width="50"/>
         <SubBitmap id="img_color2_mute_press" x="350" y="100" height="50" width="50"/>
-    </Bitmap>
-    <Bitmap id="img_color1_icons_all" file="files/colors_aio/bottom_pink_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_color1_cont1" x="0" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_cont1_hover" x="0" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_cont1_press" x="0" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color1_contall" x="50" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_contall_hover" x="50" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_contall_press" x="50" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color1_shuffon" x="100" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_shuffon_hover" x="100" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_shuffon_press" x="100" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color1_recon" x="150" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_recon_hover" x="150" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_recon_press" x="150" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color1_playlist" x="200" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_playlist_hover" x="200" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_playlist_press" x="200" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color1_volumeon" x="250" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_volumeon_hover" x="250" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_volumeon_press" x="250" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color1_settingson" x="300" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_settingson_hover" x="300" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_settingson_press" x="300" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color1_mute" x="350" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color1_mute_hover" x="350" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color1_mute_press" x="350" y="100" height="50" width="50"/>
     </Bitmap>
     <Bitmap id="img_bottomicons_all" file="files/bottom_all.png" alphacolor="#FF00FF">
         <SubBitmap id="img_arrow" x="25" y="0" height="50" width="25"/>
@@ -140,7 +89,6 @@
         <SubBitmap id="img_handle_15px_dark" x="0" y="5" height="15" width="10"/>
     </Bitmap>
     <Bitmap id="img_menu_icons_all" file="files/menu_icons.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_menu_colorcheck" x="0" y="0" height="50" width="50"/>
         <SubBitmap id="img_sett_check" x="0" y="50" height="50" width="50"/>
     </Bitmap>
     <Font id="segoeuil" file="files/segoeuil.ttf" size="14"/>
@@ -175,9 +123,6 @@
         <SubBitmap id="img_sett_open" x="0" y="250" height="50" width="250"/>
         <SubBitmap id="img_sett_open_hover" x="250" y="250" height="50" width="250"/>
         <SubBitmap id="img_sett_open_press" x="500" y="250" height="50" width="250"/>
-        <SubBitmap id="img_sett_color" x="0" y="300" height="50" width="250"/>
-        <SubBitmap id="img_sett_color_hover" x="250" y="300" height="50" width="250"/>
-        <SubBitmap id="img_sett_color_press" x="500" y="300" height="50" width="250"/>
         <SubBitmap id="img_sett_down" x="0" y="350" height="25" width="250"/>
         <SubBitmap id="img_sett_down_hover" x="250" y="350" height="25" width="250"/>
         <SubBitmap id="img_sett_down_press" x="500" y="350" height="25" width="250"/>
@@ -215,34 +160,17 @@
         <SubBitmap id="img_sett_skin_hover" x="250" y="50" height="50" width="250"/>
         <SubBitmap id="img_sett_skin_press" x="500" y="50" height="50" width="250"/>
     </Bitmap>
-    <Bitmap id="img_menu_colors_all" file="files/menu_colors_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_sett_color1" x="0" y="0" height="50" width="250"/>
-        <SubBitmap id="img_sett_color1_hover" x="250" y="0" height="50" width="250"/>
-        <SubBitmap id="img_sett_color1_press" x="500" y="0" height="50" width="250"/>
-        <SubBitmap id="img_sett_color2" x="0" y="50" height="50" width="250"/>
-        <SubBitmap id="img_sett_color2_hover" x="250" y="50" height="50" width="250"/>
-        <SubBitmap id="img_sett_color2_press" x="500" y="50" height="50" width="250"/>
-        <SubBitmap id="img_sett_color3" x="0" y="100" height="50" width="250"/>
-        <SubBitmap id="img_sett_color3_hover" x="250" y="100" height="50" width="250"/>
-        <SubBitmap id="img_sett_color3_press" x="500" y="100" height="50" width="250"/>
-    </Bitmap>
     <Bitmap id="img_bg_start" file="files/start.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_bg_start2" file="files/start2.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_bg_covers" file="files/bg_covers_04.gif" alphacolor="#FF00FF"/>
     <Bitmap id="slider_bg_all" file="files/colors_aio/slider_bg_8200_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_slider_color1_pos" x="0" y="0" height="5" width="8200"/>
         <SubBitmap id="img_slider_color2_pos" x="0" y="10" height="5" width="8200"/>
-        <SubBitmap id="img_slider_color3_pos" x="0" y="20" height="5" width="8200"/>
     </Bitmap>
     <Bitmap id="slider_vol_all" file="files/colors_aio/slider_vol_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_slider_color1_vol" x="0" y="0" height="20" width="200"/>
         <SubBitmap id="img_slider_color2_vol" x="0" y="20" height="20" width="200"/>
-        <SubBitmap id="img_slider_color3_vol" x="0" y="40" height="20" width="200"/>
     </Bitmap>
     <Bitmap id="img_slider_mute" file="files/fs_volume_mute.png" alphacolor="#FF00FF"/>
-    <Bitmap id="img_volume_pink" file="files/colors_aio/slider_pink.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_volume_blue" file="files/colors_aio/slider_blue.png" alphacolor="#FF00FF"/>
-    <Bitmap id="img_volume_green" file="files/colors_aio/slider_green.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_volume_gray" file="files/colors_aio/slider_gray.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_cover_audio" file="files/coverart.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_cover_border" file="files/coverart_border.png" alphacolor="#FF00FF"/>
@@ -250,19 +178,11 @@
     <Bitmap id="img_volume_overlay" file="files/volume_overlay.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_fs_volume_overlay" file="files/fs_volume_overlay.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_handle_all" file="files/colors_aio/slider_handle_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_handle_color1" x="20" y="0" height="10" width="10"/>
         <SubBitmap id="img_handle_color2" x="20" y="20" height="10" width="10"/>
-        <SubBitmap id="img_handle_color3" x="20" y="40" height="10" width="10"/>
-        <SubBitmap id="img_handle_color1_hover" x="0" y="0" height="10" width="10"/>
         <SubBitmap id="img_handle_color2_hover" x="0" y="20" height="10" width="10"/>
-        <SubBitmap id="img_handle_color3_hover" x="0" y="40" height="10" width="10"/>
         <SubBitmap id="img_handle_white" x="40" y="0" height="10" width="10"/>
-        <SubBitmap id="img_handle_15px_color1" x="20" y="0" height="15" width="10"/>
         <SubBitmap id="img_handle_15px_color2" x="20" y="20" height="15" width="10"/>
-        <SubBitmap id="img_handle_15px_color3" x="20" y="40" height="15" width="10"/>
-        <SubBitmap id="img_handle_15px_color1_hover" x="0" y="0" height="15" width="10"/>
         <SubBitmap id="img_handle_15px_color2_hover" x="0" y="20" height="15" width="10"/>
-        <SubBitmap id="img_handle_15px_color3_hover" x="0" y="40" height="15" width="10"/>
         <SubBitmap id="img_handle_15px_white" x="40" y="0" height="15" width="10"/>
         <SubBitmap id="img_pl_slider" x="0" y="60" height="30" width="10"/>
         <SubBitmap id="img_pl_slider_hover" x="20" y="60" height="30" width="10"/>
@@ -279,14 +199,8 @@
         <SubBitmap id="img_cover_vlc" x="0" y="450" height="50" width="300"/>
     </Bitmap>
     <Bitmap id="img_stream_anim" file="files/bottom_stream_all.png" width="41" height="120" alphacolor="#FF00FF" nbframes="10" loop="0" fps="15"/>
-    <Bitmap id="gif_cover_color1" file="files/colors_aio/cover_vlc_pink.png" alphacolor="#FF00FF" nbframes="10" loop="1" fps="40">
-        <SubBitmap id="img_cover_color1" x="0" y="450" height="50" width="80"/>
-    </Bitmap>
     <Bitmap id="gif_cover_color2" file="files/colors_aio/cover_vlc_blue.png" alphacolor="#FF00FF" nbframes="10" loop="1" fps="40">
         <SubBitmap id="img_cover_color2" x="0" y="450" height="50" width="80"/>
-    </Bitmap>
-    <Bitmap id="gif_cover_color3" file="files/colors_aio/cover_vlc_green.png" alphacolor="#FF00FF" nbframes="10" loop="1" fps="40">
-        <SubBitmap id="img_cover_color3" x="0" y="450" height="50" width="80"/>
     </Bitmap>
     <Bitmap id="img_border_main" file="files/border_all.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_slash" file="files/bottom_slash_all.png" alphacolor="#FF00FF"/>
@@ -344,20 +258,16 @@
                 <Panel id="cover_panelX_tb" x="275" y="96" width="200" height="200" xkeepratio="true" ykeepratio="true">
                     <Image id="cover_tb_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="(not vlc.hasVout) and vlc.hasAudio"/>
                     <Image id="cover_tb_audio_border" y="0" resize="scale" image="img_cover_border" visible="(not vlc.hasVout) and vlc.hasAudio"/>
-                    <Button id="cover_tb-title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio)"/>
-                    <Button id="cover_tb_title_color1" x="-81" y="75" up="gif_cover_color1" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and color_1.isActive"/>
-                    <Button id="cover_tb_title_color2" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and color_2.isActive"/>
-                    <Button id="cover_tb_title_color3" x="-81" y="75" up="gif_cover_color3" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and color_3.isActive"/>
+                    <Button id="cover_tb-title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and false"/>
+                    <Button id="cover_tb_title_cyan" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio)"/>
                 </Panel>
             </Panel>
             <Panel id="cover_panel_info" width="100%" height="395" rightbottom="rightbottom">
                 <Panel id="cover_panelX_info" x="275" y="98" width="200" height="200" xkeepratio="true" ykeepratio="true">
                     <Image id="cover_info_audio_" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="(not vlc.hasVout) and vlc.hasAudio and fileinfo_on.isActive"/>
                     <Image id="cover_info_audio_border" y="0" resize="scale" image="img_cover_border" visible="(not vlc.hasVout) and vlc.hasAudio and fileinfo_on.isActive"/>
-                    <Button id="cover_info_title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and fileinfo_on.isActive and (not vlc.hasAudio)"/>
-                    <Button id="cover_info_title_color1" x="-81" y="75" up="gif_cover_color1" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and fileinfo_on.isActive and color_1.isActive"/>
-                    <Button id="cover_info_title_color2" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and fileinfo_on.isActive and color_2.isActive"/>
-                    <Button id="cover_info_title_color3" x="-81" y="75" up="gif_cover_color3" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and fileinfo_on.isActive and color_3.isActive"/>
+                    <Button id="cover_info_title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and fileinfo_on.isActive and (not vlc.hasAudio) and false"/>
+                    <Button id="cover_info_title_cyan" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and fileinfo_on.isActive"/>
                 </Panel>
             </Panel>
 
@@ -367,18 +277,10 @@
                 <Image id="main_posbar_bg_big" width="100%" y="0" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom" visible="posbar_big.isActive"/>
                 <Image id="main_posbar_bg_sml" width="100%" y="5" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom"/>
                 <Panel id="main_posbar_panel" width="100%" height="10" rightbottom="righttop">
-                    <Slider id="main_pos_color1_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color1_pos" down="img_slider_color1_pos" over="img_slider_color1_pos" rightbottom="righttop" visible="posbar_big.isActive and color_1.isActive"/>
-                    <Slider id="main_pos_color1_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color1_pos" down="img_slider_color1_pos" over="img_slider_color1_pos" rightbottom="righttop" visible="color_1.isActive"/>
-                    <Slider id="main_poshandle_color1_sml" y="5" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color1" down="img_handle_white" over="img_handle_color1_hover" rightbottom="righttop" visible="color_1.isActive"/>
-                    <Slider id="main_poshandle_color1_big" y="0" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color1" down="img_handle_white" over="img_handle_color1_hover" rightbottom="righttop" visible="posbar_big.isActive and color_1.isActive"/>
-                    <Slider id="main_pos_color2_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_big.isActive and color_2.isActive"/>
-                    <Slider id="main_pos_color2_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="color_2.isActive"/>
-                    <Slider id="main_poshandle_color2_sml" y="5" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="color_2.isActive"/>
-                    <Slider id="main_poshandle_color2_big" y="0" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_big.isActive and color_2.isActive"/>
-                    <Slider id="main_pos_color3_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color3_pos" down="img_slider_color3_pos" over="img_slider_color3_pos" rightbottom="righttop" visible="posbar_big.isActive and color_3.isActive"/>
-                    <Slider id="main_pos_color3_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color3_pos" down="img_slider_color3_pos" over="img_slider_color3_pos" rightbottom="righttop" visible="color_3.isActive"/>
-                    <Slider id="main_poshandle_color3_sml" y="5" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color3" down="img_handle_white" over="img_handle_color3_hover" rightbottom="righttop" visible="color_3.isActive"/>
-                    <Slider id="main_poshandle_color3_big" y="0" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color3" down="img_handle_white" over="img_handle_color3_hover" rightbottom="righttop" visible="posbar_big.isActive and color_3.isActive"/>
+                    <Slider id="main_pos_color2_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_big.isActive"/>
+                    <Slider id="main_pos_color2_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_small.isActive"/>
+                    <Slider id="main_poshandle_color2_sml" y="5" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_small.isActive"/>
+                    <Slider id="main_poshandle_color2_big" y="0" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_big.isActive"/>
                 </Panel>
                 <Image id="bottom_max" width="100%" x="0" y="10" image="img_bottombar_475x50" action="move" action2="VolumeWindow.hide(); PlaylistWindow.hide(); SettingsWindow.hide(); MainWindow.maximize()" lefttop="leftbottom" rightbottom="rightbottom" visible="not MainWindow.isMaximized()"/>
                 <Image id="bottom_unmax" width="100%" x="0" y="10" image="img_bottombar_475x50" action="move" action2="VolumeWindow.hide(); PlaylistWindow.hide(); SettingsWindow.hide(); MainWindow.unmaximize()" lefttop="leftbottom" rightbottom="rightbottom" visible="MainWindow.isMaximized()"/>
@@ -468,9 +370,7 @@
             <Anchor id="playlist_anchor" y="482" priority="1" lefttop="leftbottom"/>
             <Panel id="playlist_panel" x="10" y="162" width="300" height="250" lefttop="leftbottom" rightbottom="leftbottom">
                 <Image id="playlist_slider_background" x="290" y="50" image="img_pl_slider_bg"/>
-                <Playtree id="playtree_color1" font="GenShinGothic-P" bgcolor1="#ececec" bgcolor2="#ececec" fgcolor="#202020" selcolor="#d0d0d0" playcolor="#ff005a" itemimage="img_playtree_blank" y="30" width="300" height="220" visible="color_1.isActive"/>
-                <Playtree id="playtree_color2" font="GenShinGothic-P" bgcolor1="#ececec" bgcolor2="#ececec" fgcolor="#202020" selcolor="#d0d0d0" playcolor="#00aeff" itemimage="img_playtree_blank" y="30" width="300" height="220" visible="color_2.isActive"/>
-                <Playtree id="playtree_color3" font="GenShinGothic-P" bgcolor1="#ececec" bgcolor2="#ececec" fgcolor="#202020" selcolor="#d0d0d0" playcolor="#12e35c" itemimage="img_playtree_blank" y="30" width="300" height="220" visible="color_3.isActive">
+                <Playtree id="playtree_cyan" font="GenShinGothic-P" bgcolor1="#ececec" bgcolor2="#ececec" fgcolor="#202020" selcolor="#d0d0d0" playcolor="#00aeff" itemimage="img_playtree_blank" y="30" width="300" height="220">
                     <Slider id="playlist_slider" x="290" points="(5,215),(5,65)" up="img_pl_slider" down="img_pl_slider_press" over="img_pl_slider_hover" lefttop="righttop" rightbottom="rightbottom"/>
                 </Playtree>
                 <Button id="playlist_native" up="img_sett_pl" down="img_sett_pl_press" over="img_sett_pl_hover" action="dialogs.playlist()" lefttop="righttop" rightbottom="righttop"/>
@@ -481,9 +381,7 @@
                 <Checkbox id="playlist_switch" state="playlisticons_1.isActive" up1="img_sett_right" up2="img_sett_right" down1="img_sett_right_press" down2="img_sett_right_press" over1="img_sett_right_hover" over2="img_sett_right_hover" action1="playlisticons.setLayout(playlisticons_1);" action2="playlisticons.setLayout(playlisticons_2);" x="175"/>
                 <Image id="playlist_overlay_big" y="230" width="300" height="20" image="img_bgmenu_var"/>
                 <Image id="playlist_overlay_sml" y="235" width="300" height="20" image="img_bgmenu_var" visible="posbar_small.isActive"/>
-                <Button id="playlist_hide_color1" y="270" x="15" up="img_color1_playlist" over="img_color1_playlist_hover" down="img_color1_playlist_press" action="PlaylistWindow.hide()" lefttop="leftbottom" rightbottom="leftbottom" visible="color_1.isActive"/>
-                <Button id="playlist_hide_color2" y="270" x="15" up="img_color2_playlist" over="img_color2_playlist_hover" down="img_color2_playlist_press" action="PlaylistWindow.hide()" lefttop="leftbottom" rightbottom="leftbottom" visible="color_2.isActive"/>
-                <Button id="playlist_hide_color3" y="270" x="15" up="img_color3_playlist" over="img_color3_playlist_hover" down="img_color3_playlist_press" action="PlaylistWindow.hide()" lefttop="leftbottom" rightbottom="leftbottom" visible="color_3.isActive"/>
+                <Button id="playlist_hide_cyan" y="270" x="15" up="img_color2_playlist" over="img_color2_playlist_hover" down="img_color2_playlist_press" action="PlaylistWindow.hide()" lefttop="leftbottom" rightbottom="leftbottom"/>
                 <Image id="playlist_border_icon" y="319" x="15" image="img_border_main" width="50"/>
             </Panel>
         </Layout>
@@ -509,13 +407,11 @@
                 <Button id="sett_vlc_pref_sml"  y="30" up="img_sett_vlc" down="img_sett_vlc_press" over="img_sett_vlc_hover" action="dialogs.prefs(); SettingsWindow.hide();" visible="sett_1.isActive and posbar_small.isActive"/>
                 <Button id="sett_skin_big" y="75" up="img_sett_skin" down="img_sett_skin_press" over="img_sett_skin_hover" action="sett.setLayout(sett_3)" visible="sett_1.isActive and posbar_big.isActive"/>
                 <Button id="sett_skin_sml" y="80" up="img_sett_skin" down="img_sett_skin_press" over="img_sett_skin_hover" action="sett.setLayout(sett_3)" visible="sett_1.isActive and posbar_small.isActive"/>
-                <Button id="sett_goto_colors_big" up="img_sett_color" down="img_sett_color_press" over="img_sett_color_hover" action="sett.setLayout(sett_2)" y="125" visible="sett_1.isActive and posbar_big.isActive"/>
-                <Button id="sett_goto_colors_sml" up="img_sett_color" down="img_sett_color_press" over="img_sett_color_hover" action="sett.setLayout(sett_2)" y="130" visible="sett_1.isActive and posbar_small.isActive"/>
 
                 <!--sett_3-->
 
-                <Button id="sett_upto_sett1_big" y="0" up="img_sett_up" down="img_sett_up_press" over="img_sett_up_hover" action="sett.setLayout(sett_1)" visible="(sett_2.isActive or sett_3.isActive) and posbar_big.isActive"/>
-                <Button id="sett_upto_sett1_sml" y="5" up="img_sett_up" down="img_sett_up_press" over="img_sett_up_hover" action="sett.setLayout(sett_1)" visible="(sett_2.isActive or sett_3.isActive) and posbar_small.isActive"/>
+                <Button id="sett_upto_sett1_big" y="0" up="img_sett_up" down="img_sett_up_press" over="img_sett_up_hover" action="sett.setLayout(sett_1)" visible="sett_3.isActive and posbar_big.isActive"/>
+                <Button id="sett_upto_sett1_sml" y="5" up="img_sett_up" down="img_sett_up_press" over="img_sett_up_hover" action="sett.setLayout(sett_1)" visible="sett_3.isActive and posbar_small.isActive"/>
                 <Checkbox id="sett_fileinfo_text_big" y="75" state="fileinfo_on.isActive" up1="img_sett_infobar" up2="img_sett_infobar" down1="img_sett_infobar_press" down2="img_sett_infobar_press" over1="img_sett_infobar_hover" over2="img_sett_infobar_hover" action1="titlebar.setLayout(fileinfo_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_on); SettingsWindow.hide();" visible="sett_3.isActive and posbar_big.isActive"/>
                 <Checkbox id="sett_fileinfo_text_sml" y="80" state="fileinfo_on.isActive" up1="img_sett_infobar" up2="img_sett_infobar" down1="img_sett_infobar_press" down2="img_sett_infobar_press" over1="img_sett_infobar_hover" over2="img_sett_infobar_hover" action1="titlebar.setLayout(fileinfo_on); SettingsWindow.hide();" action2="titlebar.setLayout(titlebar_on); SettingsWindow.hide();" visible="sett_3.isActive and posbar_small.isActive"/>
                 <Image id="sett_fileinfo_check_big" x="200" y="75" image="img_sett_check" visible="sett_3.isActive and fileinfo_on.isActive and posbar_big.isActive"/>
@@ -524,23 +420,7 @@
                 <Checkbox id="sett_posbar_text_sml" y="130" state="posbar_big.isActive" up1="img_sett_posbar" up2="img_sett_posbar" down1="img_sett_posbar_press" down2="img_sett_posbar_press" over1="img_sett_posbar_hover" over2="img_sett_posbar_hover" action1="posbar.setLayout(posbar_big); SettingsWindow.hide();" action2="posbar.setLayout(posbar_small); SettingsWindow.hide();" visible="sett_3.isActive and posbar_small.isActive"/>
                 <Image id="sett_posbar_check" x="200" y="125" image="img_sett_check" visible="sett_3.isActive and posbar_big.isActive"/>
 
-                <!--sett_2-->
-
-                <Button id="sett_color1_big" up="img_sett_color1" down="img_sett_color1_press" over="img_sett_color1_hover" action="color.setLayout(color_1); SettingsWindow.hide();" y="25" visible="sett_2.isActive and posbar_big.isActive"/>
-                <Button id="sett_color1_sml" up="img_sett_color1" down="img_sett_color1_press" over="img_sett_color1_hover" action="color.setLayout(color_1); SettingsWindow.hide();" y="30" visible="sett_2.isActive and posbar_small.isActive"/>
-                <Image id="sett_color1_check_big" x="200" y="25" image="img_sett_check" visible="sett_2.isActive and color_1.isActive and posbar_big.isActive"/>
-                <Image id="sett_color1_check_sml" x="200" y="30" image="img_sett_check" visible="sett_2.isActive and color_1.isActive and posbar_small.isActive"/>
-                <Button id="sett_color2_big" up="img_sett_color2" down="img_sett_color2_press" over="img_sett_color2_hover" action="color.setLayout(color_2); SettingsWindow.hide();" y="75" visible="sett_2.isActive and posbar_big.isActive"/>
-                <Button id="sett_color2_sml" up="img_sett_color2" down="img_sett_color2_press" over="img_sett_color2_hover" action="color.setLayout(color_2); SettingsWindow.hide();" y="80" visible="sett_2.isActive and posbar_small.isActive"/>
-                <Image id="sett_color2_check_big" x="200" y="75" image="img_sett_check" visible="sett_2.isActive and color_2.isActive and posbar_big.isActive"/>
-                <Image id="sett_color2_check_sml" x="200" y="80" image="img_sett_check" visible="sett_2.isActive and color_2.isActive and posbar_small.isActive"/>
-                <Button id="sett_color3_big" up="img_sett_color3" down="img_sett_color3_press" over="img_sett_color3_hover" action="color.setLayout(color_3); SettingsWindow.hide();" y="125" visible="sett_2.isActive and posbar_big.isActive"/>
-                <Button id="sett_color3_sml" up="img_sett_color3" down="img_sett_color3_press" over="img_sett_color3_hover" action="color.setLayout(color_3); SettingsWindow.hide();" y="130" visible="sett_2.isActive and posbar_small.isActive"/>
-                <Image id="sett_color3_check_big" x="200" y="125" image="img_sett_check" visible="sett_2.isActive and color_3.isActive and posbar_big.isActive"/>
-                <Image id="sett_color3_check_sml" x="200" y="130" image="img_sett_check" visible="sett_2.isActive and color_3.isActive and posbar_small.isActive"/>
-                <Button id="sett_hide_color1" y="195" x="110" up="img_color1_settingson" over="img_color1_settingson_hover" down="img_color1_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom" visible="color_1.isActive"/>
-                <Button id="sett_hide_color2" y="195" x="110" up="img_color2_settingson" over="img_color2_settingson_hover" down="img_color2_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom" visible="color_2.isActive"/>
-                <Button id="sett_hide_color3" y="195" x="110" up="img_color3_settingson" over="img_color3_settingson_hover" down="img_color3_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom" visible="color_3.isActive"/>
+                <Button id="sett_hide_cyan" y="195" x="110" up="img_color2_settingson" over="img_color2_settingson_hover" down="img_color2_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom"/>
 
                 <!--sett-border-->
 
@@ -554,24 +434,13 @@
             <Panel id="volume_panel" x="565" y="362" width="175" height="50" lefttop="leftbottom" rightbottom="leftbottom">
                 <Image id="volume_bg_big" y="0" image="img_volumebg" visible="posbar_big.isActive"/>
                 <Image id="volume_bg_sml" y="5" image="img_volumebg" visible="posbar_small.isActive"/>
-                <Image id="volume_bg_fix_color1" x="20" y="20" image="img_handle_15px_color1" visible="color_1.isActive"/>
-                <Image id="volume_bg_fix_color2" x="20" y="20" image="img_handle_15px_color2" visible="color_2.isActive"/>
-                <Image id="volume_bg_fix_color3" x="20" y="20" image="img_handle_15px_color3" visible="color_3.isActive"/>
-                <Slider id="volume_slider_color1" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_15px_color1" down="img_handle_15px_white" over="img_handle_15px_color1_hover" visible="color_1.isActive and (not vlc.isMute)">
-                    <SliderBackground id="volume_bg_color1" image="img_volume_pink" nbvert="101" visible="color_1.isActive"/>
-                </Slider>
-                <Slider id="volume_slider_color2" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_15px_color2" down="img_handle_15px_white" over="img_handle_15px_color2_hover" visible="color_2.isActive and (not vlc.isMute)">
-                    <SliderBackground id="volume_bg_color2" image="img_volume_blue" nbvert="101" visible="color_2.isActive"/>
-                </Slider>
-                <Slider id="volume_slider_color3" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_15px_color3" down="img_handle_15px_white" over="img_handle_15px_color3_hover" visible="color_3.isActive and (not vlc.isMute)">
-                    <SliderBackground id="volume_bg_color3" image="img_volume_green" nbvert="101" visible="color_3.isActive"/>
+                <Slider id="volume_slider_cyan" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_15px_color2" down="img_handle_15px_white" over="img_handle_15px_color2_hover" visible="(not vlc.isMute)">
+                    <SliderBackground id="volume_bg_cyan" image="img_volume_blue" nbvert="101"/>
                 </Slider>
                 <Slider id="volume_slider_mute" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_mute" over="img_handle_mute_hover" down="img_handle_15px_white" visible="vlc.isMute">
                     <SliderBackground id="volume_bg_mute" image="img_volume_gray" nbvert="101" visible="vlc.isMute"/>
                 </Slider>
-                <Checkbox state="vlc.isMute" y="70" x="85" up1="img_color1_volumeon" up2="img_color1_mute" over1="img_color1_volumeon_hover" over2="img_color1_mute_hover" down1="img_color1_volumeon_press" down2="img_color1_mute_press" action1="VolumeWindow.hide()" action2="VolumeWindow.hide()" visible="color_1.isActive"/>
-                <Checkbox state="vlc.isMute" y="70" x="85" up1="img_color2_volumeon" up2="img_color2_mute" over1="img_color2_volumeon_hover" over2="img_color2_mute_hover" down1="img_color2_volumeon_press" down2="img_color2_mute_press" action1="VolumeWindow.hide()" action2="VolumeWindow.hide()" visible="color_2.isActive"/>
-                <Checkbox state="vlc.isMute" y="70" x="85" up1="img_color3_volumeon" up2="img_color3_mute" over1="img_color3_volumeon_hover" over2="img_color3_mute_hover" down1="img_color3_volumeon_press" down2="img_color3_mute_press" action1="VolumeWindow.hide()" action2="VolumeWindow.hide()" visible="color_3.isActive"/>
+                <Checkbox state="vlc.isMute" y="70" x="85" up1="img_color2_volumeon" up2="img_color2_mute" over1="img_color2_volumeon_hover" over2="img_color2_mute_hover" down1="img_color2_volumeon_press" down2="img_color2_mute_press" action1="VolumeWindow.hide()" action2="VolumeWindow.hide()"/>
                 <Image id="volume_overlay_big" y="0" image="img_volume_overlay" visible="posbar_big.isActive"/>
                 <Image id="volume_overlay_sml" y="5" image="img_volume_overlay" visible="posbar_small.isActive"/>
                 <Checkbox id="volume_mute_big" state="vlc.isMute" up1="img_mute" up2="img_mute" down1="img_mute_press" down2="img_mute_press" over1="img_mute_hover" over2="img_mute_hover" action1="vlc.mute()" action2="vlc.mute()" x="125" y="0" visible="posbar_big.isActive"/>
@@ -609,8 +478,6 @@
     <Window id="sett" visible="false" dragdrop="false" playondrop="false">
         <Layout id="sett_3" width="1" height="1">
         </Layout>
-        <Layout id="sett_2" width="1" height="1">
-        </Layout>
         <Layout id="sett_1" width="1" height="1">
         </Layout>
         <Layout id="sett_0" width="1" height="1">
@@ -639,11 +506,7 @@
         </Layout>
     </Window>
     <Window id="color" visible="false" dragdrop="false" playondrop="false">
-        <Layout id="color_3" width="1" height="1">
-        </Layout>
         <Layout id="color_2" width="1" height="1">
-        </Layout>
-        <Layout id="color_1" width="1" height="1">
         </Layout>
     </Window>
     <Window id="fullscreenController" position="South" ymargin="0">
@@ -651,27 +514,15 @@
             <Panel id="fs_panel" width="100%" height="60" lefttop="leftbottom" rightbottom="rightbottom">
                 <Image id="fs_posbar_bg_big" width="100%" y="0" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom" visible="posbar_big.isActive"/>
                 <Image id="fs_posbar_bg_sml" width="100%" y="5" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom"/>
-                <Slider id="fs_pos_color1_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color1_pos" down="img_slider_color1_pos" over="img_slider_color1_pos" rightbottom="righttop" visible="posbar_big.isActive and color_1.isActive"/>
-                <Slider id="fs_pos_color1_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color1_pos" down="img_slider_color1_pos" over="img_slider_color1_pos" rightbottom="righttop" visible="color_1.isActive"/>
-                <Slider id="fs_poshandle_color1_sml" width="100%" y="5" points="(0,5),(650,5)" value="time" up="img_handle_color1" down="img_handle_white" over="img_handle_color1_hover" rightbottom="righttop" visible="color_1.isActive"/>
-                <Slider id="fs_poshandle_color1_big" width="100%" y="0" points="(0,5),(650,5)" value="time" up="img_handle_color1" down="img_handle_white" over="img_handle_color1_hover" rightbottom="righttop" visible="posbar_big.isActive and color_1.isActive"/>
-                <Slider id="fs_pos_color2_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_big.isActive and color_2.isActive"/>
-                <Slider id="fs_pos_color2_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="color_2.isActive"/>
-                <Slider id="fs_poshandle_color2_sml" width="100%" y="5" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="color_2.isActive"/>
-                <Slider id="fs_poshandle_color2_big" width="100%" y="0" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_big.isActive and color_2.isActive"/>
-                <Slider id="fs_pos_color3_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color3_pos" down="img_slider_color3_pos" over="img_slider_color3_pos" rightbottom="righttop" visible="posbar_big.isActive and color_3.isActive"/>
-                <Slider id="fs_pos_color3_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color3_pos" down="img_slider_color3_pos" over="img_slider_color3_pos" rightbottom="righttop" visible="color_3.isActive"/>
-                <Slider id="fs_poshandle_color3_sml" width="100%" y="5" points="(0,5),(650,5)" value="time" up="img_handle_color3" down="img_handle_white" over="img_handle_color3_hover" rightbottom="righttop" visible="color_3.isActive"/>
-                <Slider id="fs_poshandle_color3_big" width="100%" y="0" points="(0,5),(650,5)" value="time" up="img_handle_color3" down="img_handle_white" over="img_handle_color3_hover" rightbottom="righttop" visible="posbar_big.isActive and color_3.isActive"/>
+                <Slider id="fs_pos_color2_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_big.isActive"/>
+                <Slider id="fs_pos_color2_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_small.isActive"/>
+                <Slider id="fs_poshandle_color2_sml" width="100%" y="5" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_small.isActive"/>
+                <Slider id="fs_poshandle_color2_big" width="100%" y="0" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_big.isActive"/>
                 <Image id="fs_bottombar" width="100%" height="50" y="10" image="img_bottombar_650x50" action="move" action2="vlc.fullscreen()" lefttop="leftbottom" rightbottom="rightbottom"/>
                 <Panel id="fs_volume_panel" ymargin="0" width="175" height="50" position="SouthEast" lefttop="rightbottom" rightbottom="rightbottom">
                     <Image id="fs_volume_bg" x="52" y="20" image="img_volumebg_fs" lefttop="rightbottom" rightbottom="rightbottom"/>
-                    <Slider id="fs_volume_color1_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_1.isActive" up="img_slider_color1_vol" down="img_slider_color1_vol" over="img_slider_color1_vol"/>
-                    <Slider id="fs_volume_color1_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_1.isActive" up="img_handle_color1" down="img_handle_white" over="img_handle_color1_hover"/>
-                    <Slider id="fs_volume_color2_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_2.isActive" up="img_slider_color2_vol" down="img_slider_color2_vol" over="img_slider_color2_vol"/>
-                    <Slider id="fs_volume_color2_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_2.isActive" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover"/>
-                    <Slider id="fs_volume_color3_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_3.isActive" up="img_slider_color3_vol" down="img_slider_color3_vol" over="img_slider_color3_vol"/>
-                    <Slider id="fs_volume_color3_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="color_3.isActive" up="img_handle_color3" down="img_handle_white" over="img_handle_color3_hover"/>
+                    <Slider id="fs_volume_color2_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="(not vlc.isMute)" up="img_slider_color2_vol" down="img_slider_color2_vol" over="img_slider_color2_vol"/>
+                    <Slider id="fs_volume_color2_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="(not vlc.isMute)" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover"/>
                     <Slider id="fs_volume_mute_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="vlc.isMute" up="img_slider_mute" down="img_slider_mute" over="img_slider_mute"/>
                     <Slider id="fs_volume_mute_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="vlc.isMute" up="img_pl_slider_press" down="img_handle_white" over="img_pl_slider_hover"/>
                     <Image id="fs_volume_overlay" x="-75" image="img_fs_volume_overlay" action="move" action2="vlc.fullscreen()" lefttop="rightbottom" rightbottom="rightbottom"/>
