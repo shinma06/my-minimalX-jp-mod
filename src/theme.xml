@@ -317,7 +317,7 @@
 
             <!--VIDEO-->
 
-            <Video id="video_info" x="1" y="1" width="748" height="394" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and (posbar_big.isActive or posbar_small.isActive) and fileinfo_on.isActive"/>
+            <Video id="video_info" x="1" y="29" width="748" height="366" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and (posbar_big.isActive or posbar_small.isActive) and fileinfo_on.isActive"/>
             <Video id="video_tb_big" x="1" y="29" width="748" height="393" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_big.isActive"/>
             <Video id="video_tb_sml" x="1" y="29" width="748" height="398" rightbottom="rightbottom" visible="(hint1_off.isActive or hint1_on.isActive) and posbar_small.isActive"/>
 
