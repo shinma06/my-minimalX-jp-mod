@@ -20,7 +20,7 @@ VLC スキンでは、同一 Panel/Layout 内で**後に書かれた要素が手
 ### 1.2 メイン・ポジションバー（main_posbar_panel）
 | オリジナル | カスタム | 判定 |
 |------------|----------|------|
-| bg_big → bg_sml → [color1×4, color2×4, color3×4] の12スライダー | bg_big → bg_sml → color2 の4スライダーのみ | ✅ color2 の並び（pos_big → pos_sml → handle_sml → handle_big）は同じ。重ね順も同等 |
+| bg_big → bg_sml → [color1×4, color2×4, color3×4] の12スライダー | bg_big → bg_sml → accent の4スライダーのみ | ✅ accent の並び（pos_big → pos_sml → handle_sml → handle_big）は同じ。重ね順も同等 |
 
 ### 1.3 プレイリスト（playlist_panel）
 | オリジナル | カスタム | 判定 |
@@ -30,7 +30,7 @@ VLC スキンでは、同一 Panel/Layout 内で**後に書かれた要素が手
 ### 1.4 設定パネル（sett_panel）
 | オリジナル | カスタム | 判定 |
 |------------|----------|------|
-| ... → sett_posbar_check → [sett_2ブロック] → sett_hide_color1/2/3 → sett-border → sett_border_icon | ... → sett_posbar_check → sett_hide_cyan → sett-border → sett_border_icon | ✅ 「閉じる」ボタンは従来の sett_hide_color2 と同じ位置（posbar_check と border の間）。レイヤー順維持 |
+| ... → sett_posbar_check → [sett_2ブロック] → sett_hide_color1/2/3 → sett-border → sett_border_icon | ... → sett_posbar_check → sett_hide_cyan → sett-border → sett_border_icon | ✅ 「閉じる」ボタンは従来と同じ位置（posbar_check と border の間）。レイヤー順維持 |
 
 ### 1.5 ボリュームパネル（volume_panel）
 | オリジナル | カスタム | 判定 |
@@ -40,7 +40,7 @@ VLC スキンでは、同一 Panel/Layout 内で**後に書かれた要素が手
 ### 1.6 フルスクリーン（fs_panel / fs_volume_panel）
 | オリジナル | カスタム | 判定 |
 |------------|----------|------|
-| posbar_bg → [color1/2/3 の pos/handle] → bottombar → volume_panel 内で color1/2/3 + mute | posbar_bg → color2 の pos/handle のみ → bottombar → volume_panel 内で color2 + mute | ✅ 同一パネル内の描画順は維持 |
+| posbar_bg → [color1/2/3 の pos/handle] → bottombar → volume_panel 内で color1/2/3 + mute | posbar_bg → accent の pos/handle のみ → bottombar → volume_panel 内で accent + mute | ✅ 同一パネル内の描画順は維持 |
 
 **結論**: 今回の変更で**レイヤー上下の入れ替わりや意図しない前面化は発生していない**。
 
@@ -53,9 +53,9 @@ VLC スキンでは、同一 Panel/Layout 内で**後に書かれた要素が手
 - **参照**: `img_sett_check` は `x="0" y="50"` のまま。menu_icons.png の 2 行目（50–100px）を参照しており、オリジナルと同じ。
 - **判定**: ✅ チェックマーク表示に影響なし。
 
-### 2.2 Window "color" の Layout
-- **変更**: Layout を color_1 / color_2 / color_3 の 3 つ → **color_2 のみ**に。
-- **影響**: スキンは「常に color_2」で動作。デフォルトも color_2 のみのため不整合なし。
+### 2.2 アクセント用 Window（旧 "color"）
+- **変更**: Window id を `color` → **`accent`**、Layout を color_1/2/3 の 3 つ → **accent_layout のみ**に。id は一色前提で `accent` / `img_accent_*` に統一済み。
+- **影響**: スキンは常にアクセント用レイアウト1つのみで動作。不整合なし。
 - **判定**: ✅ 意図どおり。
 
 ### 2.3 Window "sett" の Layout
@@ -91,7 +91,7 @@ VLC スキンでは、同一 Panel/Layout 内で**後に書かれた要素が手
 |--------------------|------|
 | レイヤー順の変更   | ✅ なし（意図した削除・1本化のみ） |
 | img_sett_check 参照 | ✅ 正しい（y=50 のまま） |
-| Window/Layout 定義 | ✅ 矛盾なし（color は color_2 のみ、sett から sett_2 削除） |
+| Window/Layout 定義 | ✅ 矛盾なし（accent / accent_layout のみ、sett から sett_2 削除） |
 | 参照切れ・未参照 id | ✅ なし |
 | その他副作用       | ✅ 特になし |
 
@@ -99,8 +99,8 @@ VLC スキンでは、同一 Panel/Layout 内で**後に書かれた要素が手
 
 ---
 
-## 名づけについて（レガシー → 一色前提）
+## 名づけについて（一色前提のネイティブ構成）
 
-- **ThemeInfo name**: `MinimalX JPMod - 1色固定` に変更済み。
-- **README**: このカスタムは「テーマカラー1色固定」である旨を明記済み。
-- **theme.xml 内の id**: `color_2` や `img_color2_*` は、オリジナルアセット（colors_aio）のファイル名・構造に合わせた名残。エンジン・参照の都合上そのままにしてあり、コメントで「1色固定」「アクセント用」と補足している。
+- **ThemeInfo name**: `MinimalX JPMod - 1色固定`。
+- **README**: テーマカラー1色固定である旨を明記済み。
+- **theme.xml**: アクセント用は **Window id="accent"**、**Layout id="accent_layout"**、**Bitmap/SubBitmap id="img_accent_*"** に統一。ファイルは `colors_aio/bottom_accent_all.png`、`cover_vlc_accent.png`、`slider_accent.png` など accent 名を使用。一色前提のプロジェクトとしてレガシーな color_2 / blue 名は廃止済み。

@@ -10,32 +10,32 @@
         <SubBitmap id="img_playtree_blank" x="0" y="0" height="10" width="8"/>
     </Bitmap>
     <Bitmap id="img_main_corner" file="files/corner.png" alphacolor="#FF00FF"/>
-    <!-- アクセント色: 1色固定（シアン）。以下はそのための Bitmap 定義。id の color2 はオリジナルアセット名の名残 -->
-    <Bitmap id="img_color2_icons_all" file="files/colors_aio/bottom_blue_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_color2_cont1" x="0" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_cont1_hover" x="0" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_cont1_press" x="0" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color2_contall" x="50" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_contall_hover" x="50" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_contall_press" x="50" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color2_shuffon" x="100" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_shuffon_hover" x="100" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_shuffon_press" x="100" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color2_recon" x="150" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_recon_hover" x="150" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_recon_press" x="150" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color2_playlist" x="200" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_playlist_hover" x="200" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_playlist_press" x="200" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color2_volumeon" x="250" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_volumeon_hover" x="250" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_volumeon_press" x="250" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color2_settingson" x="300" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_settingson_hover" x="300" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_settingson_press" x="300" y="100" height="50" width="50"/>
-        <SubBitmap id="img_color2_mute" x="350" y="0" height="50" width="50"/>
-        <SubBitmap id="img_color2_mute_hover" x="350" y="50" height="50" width="50"/>
-        <SubBitmap id="img_color2_mute_press" x="350" y="100" height="50" width="50"/>
+    <!-- アクセント色: 1色固定（シアン）。以下はアクセント用 Bitmap 定義 -->
+    <Bitmap id="img_accent_icons_all" file="files/colors_aio/bottom_accent_all.png" alphacolor="#FF00FF">
+        <SubBitmap id="img_accent_cont1" x="0" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_cont1_hover" x="0" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_cont1_press" x="0" y="100" height="50" width="50"/>
+        <SubBitmap id="img_accent_contall" x="50" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_contall_hover" x="50" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_contall_press" x="50" y="100" height="50" width="50"/>
+        <SubBitmap id="img_accent_shuffon" x="100" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_shuffon_hover" x="100" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_shuffon_press" x="100" y="100" height="50" width="50"/>
+        <SubBitmap id="img_accent_recon" x="150" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_recon_hover" x="150" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_recon_press" x="150" y="100" height="50" width="50"/>
+        <SubBitmap id="img_accent_playlist" x="200" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_playlist_hover" x="200" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_playlist_press" x="200" y="100" height="50" width="50"/>
+        <SubBitmap id="img_accent_volumeon" x="250" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_volumeon_hover" x="250" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_volumeon_press" x="250" y="100" height="50" width="50"/>
+        <SubBitmap id="img_accent_settingson" x="300" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_settingson_hover" x="300" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_settingson_press" x="300" y="100" height="50" width="50"/>
+        <SubBitmap id="img_accent_mute" x="350" y="0" height="50" width="50"/>
+        <SubBitmap id="img_accent_mute_hover" x="350" y="50" height="50" width="50"/>
+        <SubBitmap id="img_accent_mute_press" x="350" y="100" height="50" width="50"/>
     </Bitmap>
     <Bitmap id="img_bottomicons_all" file="files/bottom_all.png" alphacolor="#FF00FF">
         <SubBitmap id="img_arrow" x="25" y="0" height="50" width="25"/>
@@ -164,13 +164,13 @@
     <Bitmap id="img_bg_start2" file="files/start2.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_bg_covers" file="files/bg_covers_04.gif" alphacolor="#FF00FF"/>
     <Bitmap id="slider_bg_all" file="files/colors_aio/slider_bg_8200_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_slider_color2_pos" x="0" y="10" height="5" width="8200"/>
+        <SubBitmap id="img_slider_accent_pos" x="0" y="10" height="5" width="8200"/>
     </Bitmap>
     <Bitmap id="slider_vol_all" file="files/colors_aio/slider_vol_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_slider_color2_vol" x="0" y="20" height="20" width="200"/>
+        <SubBitmap id="img_slider_accent_vol" x="0" y="20" height="20" width="200"/>
     </Bitmap>
     <Bitmap id="img_slider_mute" file="files/fs_volume_mute.png" alphacolor="#FF00FF"/>
-    <Bitmap id="img_volume_blue" file="files/colors_aio/slider_blue.png" alphacolor="#FF00FF"/>
+    <Bitmap id="img_volume_accent" file="files/colors_aio/slider_accent.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_volume_gray" file="files/colors_aio/slider_gray.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_cover_audio" file="files/coverart.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_cover_border" file="files/coverart_border.png" alphacolor="#FF00FF"/>
@@ -178,11 +178,11 @@
     <Bitmap id="img_volume_overlay" file="files/volume_overlay.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_fs_volume_overlay" file="files/fs_volume_overlay.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_handle_all" file="files/colors_aio/slider_handle_all.png" alphacolor="#FF00FF">
-        <SubBitmap id="img_handle_color2" x="20" y="20" height="10" width="10"/>
-        <SubBitmap id="img_handle_color2_hover" x="0" y="20" height="10" width="10"/>
+        <SubBitmap id="img_handle_accent" x="20" y="20" height="10" width="10"/>
+        <SubBitmap id="img_handle_accent_hover" x="0" y="20" height="10" width="10"/>
         <SubBitmap id="img_handle_white" x="40" y="0" height="10" width="10"/>
-        <SubBitmap id="img_handle_15px_color2" x="20" y="20" height="15" width="10"/>
-        <SubBitmap id="img_handle_15px_color2_hover" x="0" y="20" height="15" width="10"/>
+        <SubBitmap id="img_handle_15px_accent" x="20" y="20" height="15" width="10"/>
+        <SubBitmap id="img_handle_15px_accent_hover" x="0" y="20" height="15" width="10"/>
         <SubBitmap id="img_handle_15px_white" x="40" y="0" height="15" width="10"/>
         <SubBitmap id="img_pl_slider" x="0" y="60" height="30" width="10"/>
         <SubBitmap id="img_pl_slider_hover" x="20" y="60" height="30" width="10"/>
@@ -199,8 +199,8 @@
         <SubBitmap id="img_cover_vlc" x="0" y="450" height="50" width="300"/>
     </Bitmap>
     <Bitmap id="img_stream_anim" file="files/bottom_stream_all.png" width="41" height="120" alphacolor="#FF00FF" nbframes="10" loop="0" fps="15"/>
-    <Bitmap id="gif_cover_color2" file="files/colors_aio/cover_vlc_blue.png" alphacolor="#FF00FF" nbframes="10" loop="1" fps="40">
-        <SubBitmap id="img_cover_color2" x="0" y="450" height="50" width="80"/>
+    <Bitmap id="gif_cover_accent" file="files/colors_aio/cover_vlc_accent.png" alphacolor="#FF00FF" nbframes="10" loop="1" fps="40">
+        <SubBitmap id="img_cover_accent" x="0" y="450" height="50" width="80"/>
     </Bitmap>
     <Bitmap id="img_border_main" file="files/border_all.png" alphacolor="#FF00FF"/>
     <Bitmap id="img_slash" file="files/bottom_slash_all.png" alphacolor="#FF00FF"/>
@@ -259,7 +259,7 @@
                     <Image id="cover_tb_audio" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="(not vlc.hasVout) and vlc.hasAudio"/>
                     <Image id="cover_tb_audio_border" y="0" resize="scale" image="img_cover_border" visible="(not vlc.hasVout) and vlc.hasAudio"/>
                     <Button id="cover_tb-title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and false"/>
-                    <Button id="cover_tb_title_cyan" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio)"/>
+                    <Button id="cover_tb_title_cyan" x="-81" y="75" up="gif_cover_accent" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio)"/>
                 </Panel>
             </Panel>
             <Panel id="cover_panel_info" width="100%" height="395" rightbottom="rightbottom">
@@ -267,7 +267,7 @@
                     <Image id="cover_info_audio_" x="6" y="6" art="true" resize="scale" image="img_cover_audio" visible="(not vlc.hasVout) and vlc.hasAudio and fileinfo_on.isActive"/>
                     <Image id="cover_info_audio_border" y="0" resize="scale" image="img_cover_border" visible="(not vlc.hasVout) and vlc.hasAudio and fileinfo_on.isActive"/>
                     <Button id="cover_info_title" x="0" y="75" up="gif_cover_vlc" visible="MainWindow.isVisible and (not vlc.hasVout) and fileinfo_on.isActive and (not vlc.hasAudio) and false"/>
-                    <Button id="cover_info_title_cyan" x="-81" y="75" up="gif_cover_color2" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and fileinfo_on.isActive"/>
+                    <Button id="cover_info_title_cyan" x="-81" y="75" up="gif_cover_accent" visible="MainWindow.isVisible and (not vlc.hasVout) and (not vlc.hasAudio) and fileinfo_on.isActive"/>
                 </Panel>
             </Panel>
 
@@ -277,10 +277,10 @@
                 <Image id="main_posbar_bg_big" width="100%" y="0" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom" visible="posbar_big.isActive"/>
                 <Image id="main_posbar_bg_sml" width="100%" y="5" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom"/>
                 <Panel id="main_posbar_panel" width="100%" height="10" rightbottom="righttop">
-                    <Slider id="main_pos_color2_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_big.isActive"/>
-                    <Slider id="main_pos_color2_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_small.isActive"/>
-                    <Slider id="main_poshandle_color2_sml" y="5" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_small.isActive"/>
-                    <Slider id="main_poshandle_color2_big" y="0" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_big.isActive"/>
+                    <Slider id="main_pos_accent_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_accent_pos" down="img_slider_accent_pos" over="img_slider_accent_pos" rightbottom="righttop" visible="posbar_big.isActive"/>
+                    <Slider id="main_pos_accent_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_accent_pos" down="img_slider_accent_pos" over="img_slider_accent_pos" rightbottom="righttop" visible="posbar_small.isActive"/>
+                    <Slider id="main_poshandle_accent_sml" y="5" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_accent" down="img_handle_white" over="img_handle_accent_hover" rightbottom="righttop" visible="posbar_small.isActive"/>
+                    <Slider id="main_poshandle_accent_big" y="0" width="100%" points="(0,5),(650,5)" value="time" up="img_handle_accent" down="img_handle_white" over="img_handle_accent_hover" rightbottom="righttop" visible="posbar_big.isActive"/>
                 </Panel>
                 <Image id="bottom_max" width="100%" x="0" y="10" image="img_bottombar_475x50" action="move" action2="VolumeWindow.hide(); PlaylistWindow.hide(); SettingsWindow.hide(); MainWindow.maximize()" lefttop="leftbottom" rightbottom="rightbottom" visible="not MainWindow.isMaximized()"/>
                 <Image id="bottom_unmax" width="100%" x="0" y="10" image="img_bottombar_475x50" action="move" action2="VolumeWindow.hide(); PlaylistWindow.hide(); SettingsWindow.hide(); MainWindow.unmaximize()" lefttop="leftbottom" rightbottom="rightbottom" visible="MainWindow.isMaximized()"/>
@@ -381,7 +381,7 @@
                 <Checkbox id="playlist_switch" state="playlisticons_1.isActive" up1="img_sett_right" up2="img_sett_right" down1="img_sett_right_press" down2="img_sett_right_press" over1="img_sett_right_hover" over2="img_sett_right_hover" action1="playlisticons.setLayout(playlisticons_1);" action2="playlisticons.setLayout(playlisticons_2);" x="175"/>
                 <Image id="playlist_overlay_big" y="230" width="300" height="20" image="img_bgmenu_var"/>
                 <Image id="playlist_overlay_sml" y="235" width="300" height="20" image="img_bgmenu_var" visible="posbar_small.isActive"/>
-                <Button id="playlist_hide_cyan" y="270" x="15" up="img_color2_playlist" over="img_color2_playlist_hover" down="img_color2_playlist_press" action="PlaylistWindow.hide()" lefttop="leftbottom" rightbottom="leftbottom"/>
+                <Button id="playlist_hide_cyan" y="270" x="15" up="img_accent_playlist" over="img_accent_playlist_hover" down="img_accent_playlist_press" action="PlaylistWindow.hide()" lefttop="leftbottom" rightbottom="leftbottom"/>
                 <Image id="playlist_border_icon" y="319" x="15" image="img_border_main" width="50"/>
             </Panel>
         </Layout>
@@ -420,7 +420,7 @@
                 <Checkbox id="sett_posbar_text_sml" y="130" state="posbar_big.isActive" up1="img_sett_posbar" up2="img_sett_posbar" down1="img_sett_posbar_press" down2="img_sett_posbar_press" over1="img_sett_posbar_hover" over2="img_sett_posbar_hover" action1="posbar.setLayout(posbar_big); SettingsWindow.hide();" action2="posbar.setLayout(posbar_small); SettingsWindow.hide();" visible="sett_3.isActive and posbar_small.isActive"/>
                 <Image id="sett_posbar_check" x="200" y="125" image="img_sett_check" visible="sett_3.isActive and posbar_big.isActive"/>
 
-                <Button id="sett_hide_cyan" y="195" x="110" up="img_color2_settingson" over="img_color2_settingson_hover" down="img_color2_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom"/>
+                <Button id="sett_hide_cyan" y="195" x="110" up="img_accent_settingson" over="img_accent_settingson_hover" down="img_accent_settingson_press" action="SettingsWindow.hide()" lefttop="rightbottom"/>
 
                 <!--sett-border-->
 
@@ -434,13 +434,13 @@
             <Panel id="volume_panel" x="565" y="362" width="175" height="50" lefttop="leftbottom" rightbottom="leftbottom">
                 <Image id="volume_bg_big" y="0" image="img_volumebg" visible="posbar_big.isActive"/>
                 <Image id="volume_bg_sml" y="5" image="img_volumebg" visible="posbar_small.isActive"/>
-                <Slider id="volume_slider_cyan" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_15px_color2" down="img_handle_15px_white" over="img_handle_15px_color2_hover" visible="(not vlc.isMute)">
-                    <SliderBackground id="volume_bg_cyan" image="img_volume_blue" nbvert="101"/>
+                <Slider id="volume_slider_cyan" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_15px_accent" down="img_handle_15px_white" over="img_handle_15px_accent_hover" visible="(not vlc.isMute)">
+                    <SliderBackground id="volume_bg_cyan" image="img_volume_accent" nbvert="101"/>
                 </Slider>
                 <Slider id="volume_slider_mute" x="20" y="20" points="(5,7),(95,7)" value="volume" up="img_handle_mute" over="img_handle_mute_hover" down="img_handle_15px_white" visible="vlc.isMute">
                     <SliderBackground id="volume_bg_mute" image="img_volume_gray" nbvert="101" visible="vlc.isMute"/>
                 </Slider>
-                <Checkbox state="vlc.isMute" y="70" x="85" up1="img_color2_volumeon" up2="img_color2_mute" over1="img_color2_volumeon_hover" over2="img_color2_mute_hover" down1="img_color2_volumeon_press" down2="img_color2_mute_press" action1="VolumeWindow.hide()" action2="VolumeWindow.hide()"/>
+                <Checkbox state="vlc.isMute" y="70" x="85" up1="img_accent_volumeon" up2="img_accent_mute" over1="img_accent_volumeon_hover" over2="img_accent_mute_hover" down1="img_accent_volumeon_press" down2="img_accent_mute_press" action1="VolumeWindow.hide()" action2="VolumeWindow.hide()"/>
                 <Image id="volume_overlay_big" y="0" image="img_volume_overlay" visible="posbar_big.isActive"/>
                 <Image id="volume_overlay_sml" y="5" image="img_volume_overlay" visible="posbar_small.isActive"/>
                 <Checkbox id="volume_mute_big" state="vlc.isMute" up1="img_mute" up2="img_mute" down1="img_mute_press" down2="img_mute_press" over1="img_mute_hover" over2="img_mute_hover" action1="vlc.mute()" action2="vlc.mute()" x="125" y="0" visible="posbar_big.isActive"/>
@@ -505,9 +505,9 @@
         <Layout id="first_on" width="1" height="1">
         </Layout>
     </Window>
-    <!-- アクセント用 Window: 1色固定のため Layout は1つのみ。id はエンジン互換のため color / color_2 のまま -->
-    <Window id="color" visible="false" dragdrop="false" playondrop="false">
-        <Layout id="color_2" width="1" height="1">
+    <!-- アクセント用 Window: 1色固定のため Layout は1つのみ -->
+    <Window id="accent" visible="false" dragdrop="false" playondrop="false">
+        <Layout id="accent_layout" width="1" height="1">
         </Layout>
     </Window>
     <Window id="fullscreenController" position="South" ymargin="0">
@@ -515,15 +515,15 @@
             <Panel id="fs_panel" width="100%" height="60" lefttop="leftbottom" rightbottom="rightbottom">
                 <Image id="fs_posbar_bg_big" width="100%" y="0" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom" visible="posbar_big.isActive"/>
                 <Image id="fs_posbar_bg_sml" width="100%" y="5" image="img_posbar_650x05" lefttop="leftbottom" rightbottom="rightbottom"/>
-                <Slider id="fs_pos_color2_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_big.isActive"/>
-                <Slider id="fs_pos_color2_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_color2_pos" down="img_slider_color2_pos" over="img_slider_color2_pos" rightbottom="righttop" visible="posbar_small.isActive"/>
-                <Slider id="fs_poshandle_color2_sml" width="100%" y="5" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_small.isActive"/>
-                <Slider id="fs_poshandle_color2_big" width="100%" y="0" points="(0,5),(650,5)" value="time" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover" rightbottom="righttop" visible="posbar_big.isActive"/>
+                <Slider id="fs_pos_accent_big" width="100%" y="0" points="(0,2),(650,2)" value="time" up="img_slider_accent_pos" down="img_slider_accent_pos" over="img_slider_accent_pos" rightbottom="righttop" visible="posbar_big.isActive"/>
+                <Slider id="fs_pos_accent_sml" width="100%" y="5" points="(0,2),(650,2)" value="time" up="img_slider_accent_pos" down="img_slider_accent_pos" over="img_slider_accent_pos" rightbottom="righttop" visible="posbar_small.isActive"/>
+                <Slider id="fs_poshandle_accent_sml" width="100%" y="5" points="(0,5),(650,5)" value="time" up="img_handle_accent" down="img_handle_white" over="img_handle_accent_hover" rightbottom="righttop" visible="posbar_small.isActive"/>
+                <Slider id="fs_poshandle_accent_big" width="100%" y="0" points="(0,5),(650,5)" value="time" up="img_handle_accent" down="img_handle_white" over="img_handle_accent_hover" rightbottom="righttop" visible="posbar_big.isActive"/>
                 <Image id="fs_bottombar" width="100%" height="50" y="10" image="img_bottombar_650x50" action="move" action2="vlc.fullscreen()" lefttop="leftbottom" rightbottom="rightbottom"/>
                 <Panel id="fs_volume_panel" ymargin="0" width="175" height="50" position="SouthEast" lefttop="rightbottom" rightbottom="rightbottom">
                     <Image id="fs_volume_bg" x="52" y="20" image="img_volumebg_fs" lefttop="rightbottom" rightbottom="rightbottom"/>
-                    <Slider id="fs_volume_color2_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="(not vlc.isMute)" up="img_slider_color2_vol" down="img_slider_color2_vol" over="img_slider_color2_vol"/>
-                    <Slider id="fs_volume_color2_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="(not vlc.isMute)" up="img_handle_color2" down="img_handle_white" over="img_handle_color2_hover"/>
+                    <Slider id="fs_volume_accent_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="(not vlc.isMute)" up="img_slider_accent_vol" down="img_slider_accent_vol" over="img_slider_accent_vol"/>
+                    <Slider id="fs_volume_accent_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="(not vlc.isMute)" up="img_handle_accent" down="img_handle_white" over="img_handle_accent_hover"/>
                     <Slider id="fs_volume_mute_bg" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="vlc.isMute" up="img_slider_mute" down="img_slider_mute" over="img_slider_mute"/>
                     <Slider id="fs_volume_mute_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="vlc.isMute" up="img_pl_slider_press" down="img_handle_white" over="img_pl_slider_hover"/>
                     <Image id="fs_volume_overlay" x="-75" image="img_fs_volume_overlay" action="move" action2="vlc.fullscreen()" lefttop="rightbottom" rightbottom="rightbottom"/>
