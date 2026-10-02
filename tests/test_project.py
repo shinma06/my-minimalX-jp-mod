@@ -7,8 +7,11 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+import validate_skin
 from validate_skin import builder, validate_source, validate_package
 from verification import validate
 from pr_policy import validate_pr
@@ -23,17 +26,47 @@ class ProjectTest(unittest.TestCase):
             source.mkdir()
             xml = source / 'theme.xml'
             xml.write_text('<Theme version="2.0"/>', encoding='utf-8')
+            (source / 'files').mkdir()
+            for name in ['Z.txt', 'a.txt', 'Étiquette.txt', '音.txt']:
+                (source / 'files' / name).write_text(name, encoding='utf-8')
             module = builder()
             first = module.build_vlt(source_dir=source, output_dir=Path(tmp) / 'issue-1')
             os.utime(xml, (1800000000, 1800000000))
             second = module.build_vlt(source_dir=source, output_dir=Path(tmp) / 'issue-2')
             self.assertEqual(first.name, 'My-MinimalX-JPMod.vlt')
             self.assertEqual(first.read_bytes(), second.read_bytes())
+            with zipfile.ZipFile(first) as archive:
+                self.assertEqual(archive.namelist(),
+                                 ['files/Z.txt', 'files/a.txt', 'files/Étiquette.txt', 'files/音.txt', 'theme.xml'])
             validate_package(source, first)
             with self.assertRaises(ValueError):
                 module.build_vlt('../escape', source_dir=source, output_dir=tmp)
             with self.assertRaises(ValueError):
                 module.build_vlt(source_dir=source, output_dir=source)
+
+    def test_validation_checks_tracked_distribution_not_only_fresh_build(self):
+        module = builder()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(['git', 'init', '-q', tmp], check=True)
+            source = root / 'src'
+            source.mkdir()
+            (source / 'theme.xml').write_text('<Theme version="2.0"/>')
+            package = module.build_vlt(source_dir=source, output_dir=root)
+            good = package.read_bytes()
+            subprocess.run(['git', '-C', tmp, 'add', package.name], check=True)
+            with patch.object(validate_skin, 'ROOT', root), patch.object(validate_skin, 'builder', return_value=module):
+                validate_skin.main()
+                package.write_bytes(b'not a zip')
+                with self.assertRaisesRegex(ValueError, 'Cannot read package'):
+                    validate_skin.main()
+                package.unlink()
+                with self.assertRaisesRegex(ValueError, 'Cannot read package'):
+                    validate_skin.main()
+                package.write_bytes(good)
+                (source / 'theme.xml').write_text('<Theme version="2.0"><ThemeInfo name="new"/></Theme>')
+                with self.assertRaisesRegex(ValueError, 'Archive content mismatch'):
+                    validate_skin.main()
 
     def test_missing_external_assets_and_duplicate_ids_are_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:

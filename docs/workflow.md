@@ -16,7 +16,7 @@ Issue/PR公開やアカウント変更は実際のユーザー指示・クライ
 
 必要なソース、参照、テストを読んでから変更する。`scripts/check.py` を実行し、GUI変更は [Case JSON](verification/cases.json) に初期状態・操作・期待・観察を記録する。skin XMLと配布物の変更はGUI必須。
 
-コミット時はguardの後で、ステージされたsrc/build変更に対して配布物を再生成する。未ステージのsrc/buildや未追跡assetがある場合は止め、意図しない変更を配布物へ混ぜない。push前はmain/master/develop、別branch、dirty、非fast-forwardを拒否し、共通検証を実行する。
+コミット時はguardの後で、ステージされたsrc/build変更に対して配布物を再生成する。未ステージのsrc/buildや未追跡assetがある場合は止め、意図しない変更を配布物へ混ぜない。配布物だけの変更も、ステージされたGit blobの全収録パス・内容を同じindexのsrcと照合し、欠落・破損・不一致を拒否する。push前はmain/master/develop、別branch、dirty、非fast-forwardを拒否し、共通検証を実行する。
 
 ## 二段階統合
 

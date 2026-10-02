@@ -20,7 +20,8 @@ def build_vlt(output_name=None, *, source_dir=SRC_DIR, output_dir=REPO_ROOT):
     out_path = output_dir / name
     if out_path.resolve().is_relative_to(source_dir.resolve()):
         raise ValueError('Output must be outside the source directory')
-    files = sorted(p for p in source_dir.rglob('*') if p.is_file())
+    files = sorted((p for p in source_dir.rglob('*') if p.is_file()),
+                   key=lambda p: p.relative_to(source_dir).as_posix().encode('utf-8'))
     if any(p.is_symlink() or not p.resolve().is_relative_to(source_dir.resolve()) for p in files):
         raise ValueError('Source must not contain external or symlinked files')
     with zipfile.ZipFile(out_path, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

@@ -23,9 +23,9 @@ PowerShellでは、bootstrap後に以下を使う。macOS/Linux/Git Bashでは `
 ./scripts/python.ps1 scripts/verification.py validate
 ```
 
-成果物名は `My-MinimalX-JPMod.vlt`。ZIP直下に `theme.xml` と `files/` が入り、worktree名に依存しない。同じソース・Python/zlib環境から同じバイト列を生成する。OS/Python/zlib版をまたぐhash一致は仮定せず、実際にVLCへロードしたファイルのSHA-256を記録する。
+成果物名は `My-MinimalX-JPMod.vlt`。ZIP直下に `theme.xml` と `files/` が入り、worktree名に依存しない。収録順は相対パスのUTF-8バイト順に固定し、同じソース・Python/zlib環境から同じバイト列を生成する。Python/zlib版をまたぐhash一致は仮定しない。検証では保存またはDeflate形式のZIPを許容し、全収録パス・内容とソースの一致を必須にする。実機では候補コミットに追跡された配布物をロードし、そのファイルのSHA-256を記録する。
 
-`scripts/check.py` は指示の相対リンク・設定構文・限定的な機密候補、回帰試験、XML/asset参照、生成ZIPの内容、Case構造を検査する。DTD全体の適合、VLCへのロード、UI/UX一致、外部サービス認証は別の受入である。
+`scripts/check.py` は指示の相対リンク・設定構文・限定的な機密候補、回帰試験、XML/asset参照、追跡済み配布物と新規生成ZIPの内容、Case構造を検査する。DTD全体の適合、VLCへのロード、UI/UX一致、外部サービス認証は別の受入である。
 
 ## ブランチと完了条件
 

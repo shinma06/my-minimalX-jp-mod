@@ -7,7 +7,7 @@ python3 scripts/check.py
 python3 scripts/doctor.py
 ```
 
-checkはGit追跡済みファイルとignoreされていない新規ファイルを対象に、設定構文・symlink・相対リンクの存在・既知secret形式・個人path・差分空白と、temporary directory内の回帰試験を確認します。XML・asset・生成ZIP・Case構造も検証します。全secret形式、意味の正しさ、外部サイトの将来の到達性は保証しません。
+checkはGit追跡済みファイルとignoreされていない新規ファイルを対象に、設定構文・symlink・相対リンクの存在・既知secret形式・個人path・差分空白と、temporary directory内の回帰試験を確認します。XML・asset・追跡済み配布物・新規生成ZIP・Case構造も検証します。配布物は全収録パス・内容をsrcと照合し、欠落・破損・古い内容・余分なファイルを拒否します。全secret形式、意味の正しさ、外部サイトの将来の到達性は保証しません。
 
 doctorは実行ファイルと入口の有無・選択hooksだけを表示し、個人configや認証値を読みません。認証/MCP/trust/GUI/ruleset/schedulerの成功確認はそれぞれ別に行います。
 

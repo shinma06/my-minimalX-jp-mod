@@ -1,5 +1,6 @@
 import copy
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -8,6 +9,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import promotion
@@ -39,10 +41,12 @@ class PromotionTest(unittest.TestCase):
             cases = json.loads((ROOT / promotion.CASE_PATH).read_text(encoding='utf-8'))
             (root / promotion.CASE_PATH).parent.mkdir(parents=True)
             (root / promotion.CASE_PATH).write_text(json.dumps(cases), encoding='utf-8')
+            builder().build_vlt(source_dir=root / 'src', output_dir=root)
             git('add', '.')
             git('commit', '-qm', 'base')
             base = git('rev-parse', 'HEAD')
             (root / 'src/theme.xml').write_text('<Theme version="2.0"><ThemeInfo name="test"/></Theme>')
+            builder().build_vlt(source_dir=root / 'src', output_dir=root)
             git('add', '.')
             git('commit', '-qm', 'candidate')
             candidate = git('rev-parse', 'HEAD')
@@ -73,6 +77,62 @@ class PromotionTest(unittest.TestCase):
             git('add', 'src')
             git('commit', '-qm', 'changed after freeze')
             with self.assertRaises(ValueError): verify(revision=git('rev-parse', 'HEAD'))
+
+    def test_digest_validates_and_hashes_exact_candidate_package_blob(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            env = {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
+            env.update(GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM='1')
+            def git(*args):
+                return subprocess.check_output(['git', '-C', str(root), *args], env=env).decode().strip()
+            git('init', '-q')
+            git('config', 'core.autocrlf', 'false')
+            source = root / 'src'
+            (source / 'files').mkdir(parents=True)
+            members = {'theme.xml': b'<Theme version="2.0"/>', 'files/Z.txt': b'upper',
+                       'files/a.txt': b'lower', 'files/音.txt': b'non-ASCII'}
+            for name, content in members.items():
+                (source / name).write_bytes(content)
+            # The candidate build script is data and must never be executed.
+            (root / 'build-vlt.py').write_text('raise RuntimeError("untrusted candidate builder executed")\n')
+            package = builder().build_vlt(source_dir=source, output_dir=root)
+            canonical = package.read_bytes()
+            git('add', '.')
+            tree = git('write-tree')
+            self.assertEqual(promotion.artifact_digest(root, tree), hashlib.sha256(canonical).hexdigest())
+            # Other supported ZIP encodings are content-equivalent, but evidence
+            # must use the exact shipped bytes, not a locally reconstructed ZIP.
+            with zipfile.ZipFile(package, 'w', zipfile.ZIP_STORED) as archive:
+                for name in reversed(members):
+                    archive.writestr(name, members[name])
+                archive.comment = b'different packaging environment'
+            shipped = package.read_bytes()
+            self.assertNotEqual(canonical, shipped)
+            git('add', package.name)
+            shipped_tree = git('write-tree')
+            package.write_bytes(b'working tree must not affect candidate')
+            self.assertEqual(promotion.artifact_digest(root, shipped_tree), hashlib.sha256(shipped).hexdigest())
+            # Stage each broken distribution, then hide it behind a valid working
+            # copy: validation must still reject the exact candidate blob.
+            def altered(entries):
+                output = io.BytesIO()
+                with zipfile.ZipFile(output, 'w') as archive:
+                    for name, content in entries:
+                        archive.writestr(name, content)
+                return output.getvalue()
+            bad_packages = [b'not a ZIP', altered(dict(members, **{'theme.xml': b'stale'}).items()),
+                            altered([*members.items(), ('extra.txt', b'tampered')])]
+            for content in bad_packages:
+                with self.subTest(content=content[:12]):
+                    package.write_bytes(content)
+                    git('add', package.name)
+                    bad_tree = git('write-tree')
+                    package.write_bytes(shipped)
+                    with self.assertRaises(ValueError):
+                        promotion.artifact_digest(root, bad_tree)
+            git('rm', '--cached', '-f', package.name)
+            with self.assertRaisesRegex(ValueError, 'Candidate must track'):
+                promotion.artifact_digest(root, git('write-tree'))
 
 
 if __name__ == '__main__':

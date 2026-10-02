@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Bind GUI acceptance to a fixed source, base, complete case set and generated skin."""
+"""Bind GUI acceptance to a fixed source, base, complete case set and shipped skin."""
 import argparse
 import hashlib
-import io
 import json
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 import re
 import subprocess
-import zipfile
 
 from verification import validate
+from validate_skin import validate_git_package
 
 CASE_PATH = 'docs/verification/cases.json'
 MANIFEST_PATH = 'docs/verification/promotion.json'
@@ -40,24 +39,7 @@ def ancestor(repo, older, newer):
 
 def artifact_digest(repo, candidate):
     """Read Git blobs as data only. Do not execute build scripts from a PR."""
-    buffer = io.BytesIO()
-    names = git(repo, 'ls-tree', '-r', '-z', candidate, '--', 'src').split(b'\0')
-    with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-        for record in sorted(filter(None, names), key=lambda value: value.split(b'\t', 1)[1]):
-            metadata, raw_name = record.split(b'\t', 1)
-            mode, kind, blob = metadata.decode('ascii').split()
-            name = raw_name.decode('utf-8')
-            relative = PurePosixPath(name).relative_to('src').as_posix()
-            if mode not in {'100644', '100755'} or kind != 'blob' or '..' in PurePosixPath(relative).parts:
-                raise ValueError('Candidate source must contain ordinary files only')
-            entry = zipfile.ZipInfo(relative, (1980, 1, 1, 0, 0, 0))
-            entry.create_system = 3
-            entry.external_attr = 0o100644 << 16
-            entry.compress_type = zipfile.ZIP_DEFLATED
-            archive.writestr(entry, git(repo, 'cat-file', 'blob', blob), compresslevel=9)
-        if 'theme.xml' not in archive.namelist():
-            raise ValueError('Candidate source must contain theme.xml')
-    return hashlib.sha256(buffer.getvalue()).hexdigest()
+    return hashlib.sha256(validate_git_package(repo, candidate)).hexdigest()
 
 
 def manifest(repo, candidate, base):

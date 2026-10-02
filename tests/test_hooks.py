@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -43,6 +44,33 @@ class HookTest(unittest.TestCase):
             self.assertTrue((root / 'My-MinimalX-JPMod.vlt').is_file())
             self.assertIn('My-MinimalX-JPMod.vlt', run('git', 'ls-files').stdout)
             self.assertEqual(run('git', 'status', '--porcelain').stdout, '')
+            package = root / 'My-MinimalX-JPMod.vlt'
+            good = package.read_bytes()
+            for damage in ['corrupt', 'stale', 'extra', 'missing']:
+                with self.subTest(package=damage):
+                    if damage == 'corrupt':
+                        package.write_bytes(b'not a ZIP')
+                    elif damage == 'missing':
+                        package.unlink()
+                    else:
+                        with zipfile.ZipFile(package, 'w') as archive:
+                            archive.writestr('theme.xml', b'stale' if damage == 'stale' else xml.read_bytes())
+                            if damage == 'extra':
+                                archive.writestr('extra.txt', b'tampered')
+                    run('git', 'add', '--', package.name)
+                    # Even a good working file must not hide the broken index blob.
+                    package.write_bytes(good)
+                    denied = run('git', 'commit', '-qm', 'reject broken package only', ok=False)
+                    self.assertTrue(any(message in denied.stderr for message in
+                                        ['Cannot read package', 'Archive content mismatch',
+                                         'Archive entries do not match', 'Candidate must track']), denied.stderr)
+                    run('git', 'restore', '--staged', '--', package.name)
+            with zipfile.ZipFile(package, 'a') as archive:
+                archive.comment = b'content-equivalent package'
+            shipped = package.read_bytes()
+            run('git', 'add', '--', package.name)
+            run('git', 'commit', '-qm', 'accept content-equivalent package only')
+            self.assertEqual(package.read_bytes(), shipped)
             xml.write_text('<Theme version="2.0"><ThemeInfo name="staged"/></Theme>')
             run('git', 'add', 'src')
             xml.write_text('<Theme version="2.0"><ThemeInfo name="unstaged"/></Theme>')
