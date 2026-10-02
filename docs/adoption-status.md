@@ -26,9 +26,9 @@ AGENTS、Claude/Cursor入口、start/finish Skills、Git guard、hooks bootstrap
 
 ## 外部反映と残条件
 
-- GitHub connectorから対象private repositoryへの接続を確認し、ユーザーの反映許可後に[導入Issue #1](https://github.com/shinma06/my-minimalX-jp-mod/issues/1)とdevelopを作成した。Issueにはtype/priority/status labelと所有claimを登録・読戻した。
-- main/developのrulesets確認はGitHubから403（private repositoryにはProへのアップグレードが必要）となった。公開設定・契約は変更していない。設定案は保存済み、サーバー保護は未適用。GitHub CLIはこのsessionのPATHにないが、connectorと通常のGitを利用する。
-- [Draft PR #2](https://github.com/shinma06/my-minimalX-jp-mod/pull/2)をdevelopへ提出。`f3a8f2aec61e669f6ebb4c48680692dd0055e7ec`の[CI run](https://github.com/shinma06/my-minimalX-jp-mod/actions/runs/37007870549)でWindows/UbuntuとPR policyの成功を確認した。後続HEADの最新結果はPRを正本とする。独立レビュー、クライアント再起動後のSkills読込は未検証。
+- GitHub connectorから当初privateだったrepositoryへの接続を確認し、ユーザーの反映許可後に[導入Issue #1](https://github.com/shinma06/my-minimalX-jp-mod/issues/1)とdevelopを作成した。Issueにはtype/priority/status labelと所有claimを登録・読戻した。
+- 当初はprivate repositoryのプラン制約でrulesets APIが403となったが、2026-10-02にユーザーがpublicへ変更して解消した。[main ruleset](https://github.com/shinma06/my-minimalX-jp-mod/rules/24364210)と[develop ruleset](https://github.com/shinma06/my-minimalX-jp-mod/rules/24364212)を適用し、GitHub APIで設定とbranchのeffective rulesを読戻した。両方activeで、PR必須、strictな`test` / `PR policy`、会話解決、force push/削除禁止、bypassなしを確認済み。
+- [Draft PR #2](https://github.com/shinma06/my-minimalX-jp-mod/pull/2)をdevelopへ提出。`5de62d491db8ea9578fec2c3663f7b5273c90b23`の[CI run](https://github.com/shinma06/my-minimalX-jp-mod/actions/runs/37008548915)でWindows/Ubuntu、PR policy、testの成功を確認した。後続HEADの最新結果はPRを正本とする。独立レビュー、クライアント再起動後のSkills読込は未検証。
 - 自動coordinator、`Agent review`サーバーgate、trusted coordinatorによる自動mergeは未導入。固定候補promotion検査は実装し、統合判断と別sessionレビューはPMが行う。参照元の完全自動運用とは区別する。
 - WindowsのPOSIX private registryは明示拒否。GUI leaseとは別機能であり、手動引継ぎは利用できる。
 - GUI比較はUI-001がblocked、残Caseはpending。[QA Issue #3](https://github.com/shinma06/my-minimalX-jp-mod/issues/3)へ引き継いだ。詳細は[検証記録](verification/README.md)。

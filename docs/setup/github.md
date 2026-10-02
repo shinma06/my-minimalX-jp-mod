@@ -11,7 +11,7 @@
 5. 各required checkの実行実績を確認後、[develop設定案](../../.github/develop-ruleset.json)と[main設定案](../../.github/main-ruleset.json)を必要な権限で適用し、GET rulesetとbranchのeffective rulesを照合する。既存設定を盲目的に置換しない。
 6. mainへの初回導入も[固定候補手順](../verification/README.md)を使う。確認済みの旧main SHAに限り、台帳がない状態から全10件の初期Caseを必須として移行できる。全CaseのGUI合格・独立レビューを省略しない。
 
-このrepositoryはprivateである。プランによりrulesetsが利用できない場合は未適用と記録し、ローカルguardをサーバー保護の代用として報告しない。
+2026-10-02にユーザーがrepositoryをpublicへ変更し、main/developのrulesetsを適用した。設定とbranchのeffective rulesを読戻し、両方がactiveであることを確認済み。実際のrulesetへのリンクは[導入記録](../adoption-status.md)に残す。今後プラン等によりrulesetsが利用できない場合は未適用と記録し、ローカルguardをサーバー保護の代用として報告しない。
 
 ## 設定案
 
