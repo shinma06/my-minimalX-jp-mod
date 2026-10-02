@@ -131,6 +131,10 @@ class PromotionTest(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         promotion.artifact_digest(root, bad_tree)
             git('rm', '--cached', '-f', package.name)
+            # A legacy distribution cannot stand in for the renamed candidate.
+            legacy_package = root / 'My-MinimalX-JPMod.vlt'
+            legacy_package.write_bytes(shipped)
+            git('add', legacy_package.name)
             with self.assertRaisesRegex(ValueError, 'Candidate must track'):
                 promotion.artifact_digest(root, git('write-tree'))
 

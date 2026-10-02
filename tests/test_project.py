@@ -33,7 +33,8 @@ class ProjectTest(unittest.TestCase):
             first = module.build_vlt(source_dir=source, output_dir=Path(tmp) / 'issue-1')
             os.utime(xml, (1800000000, 1800000000))
             second = module.build_vlt(source_dir=source, output_dir=Path(tmp) / 'issue-2')
-            self.assertEqual(first.name, 'My-MinimalX-JPMod.vlt')
+            self.assertEqual(first.name, 'VLC-WMP-Video.vlt')
+            self.assertEqual(first.name, validate_skin.ARTIFACT_NAME)
             self.assertEqual(first.read_bytes(), second.read_bytes())
             with zipfile.ZipFile(first) as archive:
                 self.assertEqual(archive.namelist(),

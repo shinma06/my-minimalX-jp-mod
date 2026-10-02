@@ -2,6 +2,8 @@
 
 2026-10-02。ハーネス導入と、検証で見つかったXMLの整合性修正を実施した。
 
+この導入記録内の旧配布名とhashは、改名前の作業に対応する履歴として保持する。現行プロジェクトは **VLC WMP Video Skin**、配布物は `VLC-WMP-Video.vlt`。過去のファイル名やhashを新しい候補の識別へ転用しない。repository内のIssue/PR等へのリンクは移行先URLを使う。
+
 ## 出典
 
 - [agent-harness-template](https://github.com/shinma06/agent-harness-template/tree/e822318a6c0fa7175a89687b929197dfae879184): `e822318a6c0fa7175a89687b929197dfae879184`
@@ -27,11 +29,17 @@ AGENTS、Claude/Cursor入口、start/finish Skills、Git guard、hooks bootstrap
 
 ## 外部反映と残条件
 
-- GitHub connectorから当初privateだったrepositoryへの接続を確認し、ユーザーの反映許可後に[導入Issue #1](https://github.com/shinma06/my-minimalX-jp-mod/issues/1)とdevelopを作成した。Issueにはtype/priority/status labelと所有claimを登録・読戻した。
-- 当初はprivate repositoryのプラン制約でrulesets APIが403となったが、2026-10-02にユーザーがpublicへ変更して解消した。[main ruleset](https://github.com/shinma06/my-minimalX-jp-mod/rules/24364210)と[develop ruleset](https://github.com/shinma06/my-minimalX-jp-mod/rules/24364212)を適用し、GitHub APIで設定とbranchのeffective rulesを読戻した。両方activeで、PR必須、strictな`test` / `PR policy`、会話解決、force push/削除禁止、bypassなしを確認済み。
-- [PR #2](https://github.com/shinma06/my-minimalX-jp-mod/pull/2)をdevelopへDraftで提出。`5de62d491db8ea9578fec2c3663f7b5273c90b23`の[CI run](https://github.com/shinma06/my-minimalX-jp-mod/actions/runs/37008548915)でWindows/Ubuntu、PR policy、testの成功を確認した。独立レビュー指摘の修正後も固定HEADの再レビューを必要とする。最新のレビュー・CI・統合状態はIssue/PRを正本とする。クライアント再起動後のSkills読込は未検証。
+- GitHub connectorから当初privateだったrepositoryへの接続を確認し、ユーザーの反映許可後に[導入Issue #1](https://github.com/shinma06/vlc-wmp-video-skin/issues/1)とdevelopを作成した。Issueにはtype/priority/status labelと所有claimを登録・読戻した。
+- 当初はprivate repositoryのプラン制約でrulesets APIが403となったが、2026-10-02にユーザーがpublicへ変更して解消した。[main ruleset](https://github.com/shinma06/vlc-wmp-video-skin/rules/24364210)と[develop ruleset](https://github.com/shinma06/vlc-wmp-video-skin/rules/24364212)を適用し、GitHub APIで設定とbranchのeffective rulesを読戻した。両方activeで、PR必須、strictな`test` / `PR policy`、会話解決、force push/削除禁止、bypassなしを確認済み。
+- [PR #2](https://github.com/shinma06/vlc-wmp-video-skin/pull/2)をdevelopへDraftで提出。`5de62d491db8ea9578fec2c3663f7b5273c90b23`の[CI run](https://github.com/shinma06/vlc-wmp-video-skin/actions/runs/37008548915)でWindows/Ubuntu、PR policy、testの成功を確認した。独立レビュー指摘の修正後も固定HEADの再レビューを必要とする。最新のレビュー・CI・統合状態はIssue/PRを正本とする。クライアント再起動後のSkills読込は未検証。
 - 自動coordinator、`Agent review`サーバーgate、trusted coordinatorによる自動mergeは未導入。固定候補promotion検査は実装し、統合判断と別sessionレビューはPMが行う。参照元の完全自動運用とは区別する。
 - WindowsのPOSIX private registryは明示拒否。GUI leaseとは別機能であり、手動引継ぎは利用できる。
-- ユーザーの追加指示で一致対象を動画再生画面だけに限定した。Case定義をその範囲の10件へ更新し、すべてpendingとした。[QA Issue #3](https://github.com/shinma06/my-minimalX-jp-mod/issues/3)が担当と実機試験の正本。参照アプリの導入・準備画面の観察は進んだが、動画再生比較は未実施。詳細は[検証記録](verification/README.md)。
+- ユーザーの追加指示で一致対象を動画再生画面だけに限定した。Case定義をその範囲の10件へ更新し、すべてpendingとした。[QA Issue #3](https://github.com/shinma06/vlc-wmp-video-skin/issues/3)が担当と実機試験の正本。参照アプリの導入・準備画面の観察は進んだが、動画再生比較は未実施。詳細は[検証記録](verification/README.md)。
 
-作業branchは `codex/1-agent-harness`、targetはdevelop。固定差分レビュー・Draft PR・CIの現行状態はIssue/PRを正本とする。mainへの統合と独立レビューはこの導入操作だけで完了扱いにしない。原典の手順を追加の通知・定期実行の承認として扱わない。
+導入時の作業branchは `codex/1-agent-harness`、targetはdevelop。[PR #2](https://github.com/shinma06/vlc-wmp-video-skin/pull/2)は固定HEAD `04ceddf8e0141edaa571fe8a82c4c9229f136cd5` の独立レビュー後、developの `f1cbe3813d7c90d1816f22f355683cbb9b136919` へ統合された。GUIの全10件はpendingのままQA #3へ引き継いでいる。最新のCI・受入・統合状態はIssue/PRを正本とする。
+
+## 動画再生画面プロジェクトへの移行
+
+[Issue #4](https://github.com/shinma06/vlc-wmp-video-skin/issues/4)で、表示名をVLC WMP Video Skin、repositoryを `vlc-wmp-video-skin`、配布名を `VLC-WMP-Video.vlt` へ揃える。原作Maverick07x氏と日本語環境向け改変のrexent_gx氏の由来を残し、旧XMLとシアン固定化レビューを [legacy/minimalx](../legacy/minimalx/README.md) に原文のまま移す。ソースは引き続き `src/` を使用する。
+
+GitHubの改名、remote更新、developを既定branchにする操作はPMによる読戻しの対象で、この文書の変更だけでは実施済みとしない。mainへの反映は固定候補の実機合格後に行う。原典の手順を追加の通知・定期実行の承認として扱わない。

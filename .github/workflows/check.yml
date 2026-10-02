@@ -26,8 +26,9 @@ jobs:
       - run: python build-vlt.py --output-dir .harness-local/dist
       - uses: actions/upload-artifact@v4
         with:
-          name: skin-${{ github.sha }}-${{ matrix.os }}
-          path: .harness-local/dist/My-MinimalX-JPMod.vlt
+          name: vlc-wmp-video-${{ github.sha }}-${{ matrix.os }}
+          path: .harness-local/dist/*.vlt
+          if-no-files-found: error
           retention-days: 14
   test:
     needs: platform

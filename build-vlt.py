@@ -2,11 +2,13 @@
 """Build a reproducible VLC skin; the distribution name is stable across worktrees."""
 import argparse
 from pathlib import Path
+import sys
 import zipfile
 
 REPO_ROOT = Path(__file__).resolve().parent
 SRC_DIR = REPO_ROOT / 'src'
-ARTIFACT_NAME = 'My-MinimalX-JPMod.vlt'
+sys.path.insert(0, str(REPO_ROOT / 'scripts'))
+from validate_skin import ARTIFACT_NAME
 
 
 def build_vlt(output_name=None, *, source_dir=SRC_DIR, output_dir=REPO_ROOT):

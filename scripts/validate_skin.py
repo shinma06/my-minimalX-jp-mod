@@ -10,7 +10,7 @@ import zipfile
 import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
-ARTIFACT_NAME = 'My-MinimalX-JPMod.vlt'
+ARTIFACT_NAME = 'VLC-WMP-Video.vlt'
 
 
 def validate_source(source):
