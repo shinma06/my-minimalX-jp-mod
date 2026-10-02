@@ -91,7 +91,6 @@
     <Bitmap id="img_menu_icons_all" file="files/menu_icons.png" alphacolor="#FF00FF">
         <SubBitmap id="img_sett_check" x="0" y="50" height="50" width="50"/>
     </Bitmap>
-    <Font id="segoeuil" file="files/segoeuil.ttf" size="14"/>
     <Bitmap id="img_backgrounds_all" file="files/backgrounds.png" alphacolor="#FF00FF">
         <SubBitmap id="img_finfo_650x27" x="0" y="10" height="27" width="650"/>
         <SubBitmap id="img_bottombar_650x50" x="0" y="60" height="50" width="650"/>
@@ -528,7 +527,7 @@
                     <Slider id="fs_volume_mute_sl" x="52" y="20" points="(5,5),(95,5)" value="volume" visible="vlc.isMute" up="img_pl_slider_press" down="img_handle_white" over="img_pl_slider_hover"/>
                     <Image id="fs_volume_overlay" x="-75" image="img_fs_volume_overlay" action="move" action2="vlc.fullscreen()" lefttop="rightbottom" rightbottom="rightbottom"/>
                     <Checkbox id="fs_volume_icon" state="vlc.isMute" up1="img_volume" up2="img_volume_mute" lefttop="rightbottom" rightbottom="rightbottom"/>
-                    <Image id="bottom_resize_E" y="0" x="170" image="img_bottombar_5x50" action="resizeE" lefttop="rightbottom" rightbottom="rightbottom"/>
+                    <Image id="fs_bottom_resize_E" y="0" x="170" image="img_bottombar_5x50" action="resizeE" lefttop="rightbottom" rightbottom="rightbottom"/>
                 </Panel>
                 <Panel id="fs_bottom_left0_panel" y="10" width="175" height="50" lefttop="leftbottom" rightbottom="leftbottom">
                     <Text id="fs_time_1_notime" focus="false" text="0:00:00" font="GenShinGothic-P" color="#ffffff" x="45" y="15" width="60" lefttop="leftbottom" rightbottom="leftbottom" visible="(not vlc.hasAudio) and (not vlc.hasVout)"/>

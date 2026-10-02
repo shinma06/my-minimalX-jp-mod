@@ -1,2 +1,15 @@
 # 配布用はリポジトリ名.vlt のみ使用
 MinimalX_JPMod_VLC_2.6.2.vlt
+
+# Harness runtime, downloaded references and private evidence
+.harness-reference/
+.harness-local/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.codex/config.toml
+.mcp.json
+.cursor/mcp.json

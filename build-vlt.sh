@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# src を zip 化して リポジトリ名.vlt で上書きする
+# src を zip 化して配布用の固定名で出力する
 cd "$(dirname "$0")"
-exec python3 build-vlt.py "$@"
+exec bash scripts/python.sh build-vlt.py "$@"
