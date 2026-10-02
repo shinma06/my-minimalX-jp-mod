@@ -1,13 +1,5 @@
-#!/bin/sh
-# コミット前に src から .vlt をビルドし、更新があればステージする
-set -e
-ROOT="$(git rev-parse --show-toplevel)"
-cd "$ROOT"
-
-# リポジトリ名.vlt をビルド
-python3 build-vlt.py
-
-# 更新された .vlt をステージ
-git add *.vlt 2>/dev/null || true
-
-exit 0
+#!/usr/bin/env bash
+# Compatibility entrypoint for the old installer.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+exec bash .githooks/pre-commit

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+bash scripts/python.sh scripts/git_guard.py commit
+bash scripts/python.sh scripts/pre_commit.py

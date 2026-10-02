@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "reference_product_id": "9WZDNCRFJ3PT",
+  "cases": [
+    {
+      "id": "UI-001",
+      "title": "起動・ホーム画面",
+      "initial_state": "参照アプリとVLCを終了し、同じ表示倍率・ウィンドウ寸法を指定する。",
+      "steps": [
+        "参照アプリ本体を起動して版とホームを記録する。",
+        "同じ寸法で候補スキンをロードしたVLCを起動する。",
+        "タイトル、ナビゲーション、余白、色、初期フォーカスを比較する。"
+      ],
+      "expected": "ホームの構造・見た目・初期操作が一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "blocked",
+        "owner": "unassigned",
+        "next_action": "参照アプリ本体を起動し、Computer Useで操作可能なwindowを確認する。"
+      }
+    },
+    {
+      "id": "UI-002",
+      "title": "ファイルを開く・再生・一時停止",
+      "initial_state": "共通fixtureを用意し、両アプリで未再生状態にする。",
+      "steps": [
+        "ファイルを開く導線で同じfixtureを開く。",
+        "再生・一時停止・再開をそれぞれ実行する。",
+        "操作ボタン、再生情報、フィードバックを比較する。"
+      ],
+      "expected": "導線、ボタン状態と再生・停止のフィードバックが一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-003",
+      "title": "シークと時間表示",
+      "initial_state": "同一動画を同じ再生位置で一時停止する。",
+      "steps": [
+        "再生バーをクリックして移動する。",
+        "ハンドルをドラッグし先頭・終端付近も確認する。",
+        "時間表示とホバー表示を比較する。"
+      ],
+      "expected": "シーク操作・時間表示・端点の挙動が一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-004",
+      "title": "音量・ミュート",
+      "initial_state": "両アプリを同じ音量・ミュート解除状態にする。",
+      "steps": [
+        "音量を変更し、最小・最大値を確認する。",
+        "ミュートし、解除して前の値に戻るか確認する。"
+      ],
+      "expected": "音量表示・操作・ミュート状態と復帰が一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-005",
+      "title": "プレイリスト・前後・リピート・シャッフル",
+      "initial_state": "共有可能な同じ3件のfixtureを同じ順で登録する。",
+      "steps": [
+        "一覧を開き、項目を選択する。",
+        "前・次、リピート、シャッフルを切り替える。",
+        "一覧編集と再生順、選択状態を比較する。"
+      ],
+      "expected": "一覧と再生順制御の導線・状態遷移が一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-006",
+      "title": "ライブラリ・検索・ナビゲーション",
+      "initial_state": "個人メディアを含まない同じfixtureセットを使用する。",
+      "steps": [
+        "ライブラリの動画・音楽導線を確認する。",
+        "検索・並べ替え・戻る操作を行う。",
+        "スキンだけで実装不能な項目は差分と制約を記録する。"
+      ],
+      "expected": "参照アプリのライブラリ操作を再現し、未実装機能を残さない。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-007",
+      "title": "全画面・ウィンドウサイズ変更",
+      "initial_state": "同一動画を通常ウィンドウで再生する。",
+      "steps": [
+        "全画面へ入り、操作UIの表示・自動非表示を確認する。",
+        "全画面を終了し、ウィンドウを拡大・縮小する。"
+      ],
+      "expected": "切替導線、復帰、コントロールの配置・表示条件が一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-008",
+      "title": "キーボード・フォーカス・日本語表示",
+      "initial_state": "両アプリを日本語環境で同じ初期フォーカスにする。",
+      "steps": [
+        "Tabで移動し、フォーカスの可視性を確認する。",
+        "再生・シーク・音量・全画面のキー操作を比較する。",
+        "日本語タイトル・長い名称・ツールチップを比較する。"
+      ],
+      "expected": "主要操作のキー、フォーカス遷移、日本語の可読性が一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-009",
+      "title": "空状態・失敗・復旧",
+      "initial_state": "空の再生一覧と読み込めないテスト用メディアを用意する。",
+      "steps": [
+        "空状態を比較する。",
+        "読込み失敗を発生させ、通知と復旧導線を比較する。",
+        "有効なfixtureを開き直す。"
+      ],
+      "expected": "空状態・エラー・再試行のUI/UXが一致する。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    },
+    {
+      "id": "UI-010",
+      "title": "設定・メニュー・永続状態",
+      "initial_state": "両アプリの設定初期値と変更前の状態を記録する。",
+      "steps": [
+        "メニューと主要設定を開いて導線・内容を比較する。",
+        "対象設定を変更し再起動後の状態を比較する。",
+        "試験で変更した個人設定を復元する。"
+      ],
+      "expected": "設定導線と永続化される状態が一致し、試験後に元の環境へ戻せる。",
+      "required_execution": "computer_use",
+      "result": {
+        "status": "pending",
+        "owner": "unassigned",
+        "next_action": "GUI担当と固定build・fixtureを決めて両アプリを比較する。"
+      }
+    }
+  ]
+}

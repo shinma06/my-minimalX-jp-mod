@@ -1,0 +1,53 @@
+name: Project checks
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  platform:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/check.py
+      - run: python build-vlt.py --output-dir .harness-local/dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skin-${{ github.sha }}-${{ matrix.os }}
+          path: .harness-local/dist/My-MinimalX-JPMod.vlt
+          retention-days: 14
+  test:
+    needs: platform
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require both platforms
+        env:
+          RESULT: ${{ needs.platform.result }}
+        run: test "$RESULT" = success
+  pr-policy:
+    name: PR policy
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/pr_policy.py --event "$GITHUB_EVENT_PATH"

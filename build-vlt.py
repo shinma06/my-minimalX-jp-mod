@@ -1,51 +1,41 @@
 #!/usr/bin/env python3
-"""
-src/ を ZIP 圧縮し、リポジトリ名.vlt として保存する。
-既存の .vlt は上書きする。
-"""
-import zipfile
-import subprocess
-import sys
+"""Build a reproducible VLC skin; the distribution name is stable across worktrees."""
+import argparse
 from pathlib import Path
+import zipfile
 
 REPO_ROOT = Path(__file__).resolve().parent
-SRC_DIR = REPO_ROOT / "src"
+SRC_DIR = REPO_ROOT / 'src'
+ARTIFACT_NAME = 'My-MinimalX-JPMod.vlt'
 
 
-def get_repo_name() -> str:
-    """Git のリポジトリ名を取得。失敗時はカレントディレクトリ名を使う。"""
-    try:
-        r = subprocess.run(
-            ["git", "rev-parse", "--show-toplevel"],
-            cwd=REPO_ROOT,
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-        return Path(r.stdout.strip()).name
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return REPO_ROOT.name
-
-
-def build_vlt(output_name: str | None = None) -> Path:
-    """src/ の中身を ZIP 化し .vlt として保存。"""
-    if not SRC_DIR.is_dir():
-        print(f"エラー: {SRC_DIR} が見つかりません。", file=sys.stderr)
-        sys.exit(1)
-
-    name = (output_name or get_repo_name()).removesuffix(".vlt")
-    out_path = REPO_ROOT / f"{name}.vlt"
-
-    with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        for f in sorted(SRC_DIR.rglob("*")):
-            if f.is_file():
-                arcname = f.relative_to(SRC_DIR)
-                zf.write(f, arcname)
-
-    print(f"作成しました: {out_path}")
+def build_vlt(output_name=None, *, source_dir=SRC_DIR, output_dir=REPO_ROOT):
+    source_dir, output_dir = Path(source_dir), Path(output_dir)
+    if not (source_dir / 'theme.xml').is_file():
+        raise ValueError('Source must contain theme.xml')
+    name = (output_name or ARTIFACT_NAME).removesuffix('.vlt') + '.vlt'
+    if Path(name).name != name or '/' in name or '\\' in name:
+        raise ValueError('Output name must be a filename; use --output-dir for directories')
+    output_dir.mkdir(parents=True, exist_ok=True)
+    out_path = output_dir / name
+    if out_path.resolve().is_relative_to(source_dir.resolve()):
+        raise ValueError('Output must be outside the source directory')
+    files = sorted(p for p in source_dir.rglob('*') if p.is_file())
+    if any(p.is_symlink() or not p.resolve().is_relative_to(source_dir.resolve()) for p in files):
+        raise ValueError('Source must not contain external or symlinked files')
+    with zipfile.ZipFile(out_path, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for path in files:
+            entry = zipfile.ZipInfo(path.relative_to(source_dir).as_posix(), (1980, 1, 1, 0, 0, 0))
+            entry.create_system = 3
+            entry.external_attr = 0o100644 << 16
+            entry.compress_type = zipfile.ZIP_DEFLATED
+            archive.writestr(entry, path.read_bytes(), compresslevel=9)
     return out_path
 
 
-if __name__ == "__main__":
-    output_name = sys.argv[1] if len(sys.argv) > 1 else None
-    build_vlt(output_name)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('name', nargs='?')
+    parser.add_argument('--output-dir', type=Path, default=REPO_ROOT)
+    args = parser.parse_args()
+    print(build_vlt(args.name, output_dir=args.output_dir))
