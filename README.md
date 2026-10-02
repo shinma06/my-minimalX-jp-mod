@@ -1,6 +1,6 @@
 # MinimalX-JPMod（My カスタム）
 
-現在の目標は、VLCのUI/UXをMicrosoft Storeの[Windows メディア プレーヤー](https://apps.microsoft.com/detail/9wzdncrfj3pt?hl=ja-JP&gl=JP)と一致させることです。まずagent-harnessを導入し、実機差分をCaseごとに追跡できる状態にしています。UI一致は未検証です。
+現在の目標は、VLCの**動画再生中の画面と、その画面で使うUI/UXのみ**をMicrosoft Storeの[Windows メディア プレーヤー](https://apps.microsoft.com/detail/9wzdncrfj3pt?hl=ja-JP&gl=JP)と一致させることです。ホームや音楽・動画ライブラリの再現は対象に含めません。既存スキンを活用し、agent-harnessで動画画面の実機差分をCaseごとに追跡します。UI一致は未検証です。
 
 開発は [プロジェクト設定](docs/project.md) → [Windowsセットアップ](docs/setup/windows.md) → [Issue/PRと二段階統合](docs/workflow.md) → [実機検証](docs/verification/README.md) の順で参照してください。[導入済み範囲と残条件](docs/adoption-status.md)も確認してください。
 

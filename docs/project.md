@@ -1,8 +1,8 @@
 # プロジェクトの目的と実行コマンド
 
-VLC media player の UI/UX を、Microsoft Store の [Windows メディア プレーヤー](https://apps.microsoft.com/detail/9wzdncrfj3pt?hl=ja-JP&gl=JP)（製品ID `9WZDNCRFJ3PT`）と一致させる。表示だけでなく、操作順序、状態遷移、フィードバック、キーボード操作を同じ実機・同じ素材で比較する。Windows Media Player Legacy は比較対象ではない。
+VLC media player の**動画再生中の画面と、その画面で使うUI/UXのみ**を、Microsoft Store の [Windows メディア プレーヤー](https://apps.microsoft.com/detail/9wzdncrfj3pt?hl=ja-JP&gl=JP)（製品ID `9WZDNCRFJ3PT`）と一致させる。2026-10-02のユーザーの追加指示に基づく範囲である。表示だけでなく、動画の再生・シーク・音量・字幕/音声・速度・全画面・メニュー・キーボード操作を同じ実機・同じ素材で比較する。ホーム、音楽/動画ライブラリ、アプリ全体のナビゲーションは再現対象に含めない。Windows Media Player Legacy は比較対象ではない。
 
-現在の実装は VLC Skins2 の `src/theme.xml` と `src/files/`。Python 3.11以上の標準ライブラリで `.vlt` を生成する。スキンだけで目標を実現できるかは実機差分の調査対象。ライブラリ機能等の制約は先に記録し、観察なしに実現済みとしない。既存のシアン固定は現状の仕様であり、今後の一致目標より優先する要件ではない。
+現在の実装は VLC Skins2 の `src/theme.xml` と `src/files/`。Python 3.11以上の標準ライブラリで `.vlt` を生成する。既存の動画表示・操作部品を活用し、観察した差分から小さく修正する。秒数スキップ、音量範囲、通常画面での自動非表示、フォーカス遷移等はSkins2の実現範囲と照合し、観察なしに実現済みとしない。動画画面に必要な要件が満たせないと確認するまで全面再実装を前提にしない。既存のシアン固定は現状の仕様であり、今後の一致目標より優先する要件ではない。
 
 ## 入口
 
@@ -31,4 +31,4 @@ PowerShellでは、bootstrap後に以下を使う。macOS/Linux/Git Bashでは `
 
 通常の実装は `develop`、実機確認済みの固定候補は `main`。GUIに影響しない管理ツールは `main` へ直接PRを出せる。ローカル/リモートのbranch作成とGitHub保護の反映は別の操作で、[導入記録](adoption-status.md)に実状態を残す。
 
-Issue番号を含む `codex/<番号>-<slug>` 等の専用branch/worktree、1 writer、固定HEAD/baseの別sessionレビューを使う。原典の製品固有engine・GitHub ID・過去承認をコピーしない。ユーザーの依頼は今回まずハーネス導入であり、UI全面改修の完了を意味しない。
+Issue番号を含む `codex/<番号>-<slug>` 等の専用branch/worktree、1 writer、固定HEAD/baseの別sessionレビューを使う。原典の製品固有engine・GitHub ID・過去承認をコピーしない。管理基盤の導入、動画画面の実装、実機合格、main反映を別々に確認する。PMはユーザーの許可に基づき担当を割り振るが、同じデスクトップのGUI担当は同時に1名とする。
