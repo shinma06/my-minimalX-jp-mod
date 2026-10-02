@@ -9,7 +9,7 @@
 3. `develop`を確認済みmain SHAから作成し、導入PRをdevelopへ提出する。今回のXML修正はGUI対象なので、単純にmain toolingへ混ぜない。
 4. 別sessionレビューと実CI `test` / `PR policy`を通し、developへの統合を確認する。GUIはCase正本とQA Issueに引き継ぐ。
 5. 各required checkの実行実績を確認後、[develop設定案](../../.github/develop-ruleset.json)と[main設定案](../../.github/main-ruleset.json)を必要な権限で適用し、GET rulesetとbranchのeffective rulesを照合する。既存設定を盲目的に置換しない。
-6. mainへの初回導入は、Case正本のない旧baseをどう移行するか独立レビューで確定してから行う。通常のpromotion検査を弱めて通さない。以後は[固定候補手順](../verification/README.md)を使う。
+6. mainへの初回導入も[固定候補手順](../verification/README.md)を使う。確認済みの旧main SHAに限り、台帳がない状態から全10件の初期Caseを必須として移行できる。全CaseのGUI合格・独立レビューを省略しない。
 
 このrepositoryはprivateである。プランによりrulesetsが利用できない場合は未適用と記録し、ローカルguardをサーバー保護の代用として報告しない。
 

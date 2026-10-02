@@ -18,7 +18,7 @@ AGENTS、Claude/Cursor入口、start/finish Skills、Git guard、hooks bootstrap
 
 ## このコンピューターでの検証
 
-- Windows / Python 3.12.14で`./scripts/python.ps1 scripts/check.py`成功。14件中12件成功、POSIX専用の2件は対象外。Windowsのprivate registry拒否は別テストで成功。
+- Windows / Python 3.12.14で`./scripts/python.ps1 scripts/check.py`成功。初回14件中12件成功、POSIX専用の2件は対象外。Windowsのprivate registry拒否は別テストで成功。初期base移行の回帰試験を追加し現在は15件構成。
 - 使い捨てrepositoryでbootstrapの再実行、既存hook保全、mainへのcommit/push拒否、Issue branchでの自動package、未ステージsrc混在の拒否を確認した。
 - XML・asset参照・生成ZIP内容、候補固定後のソース改変、Case不足・未合格・hash相違の拒否を確認した。
 - 当repositoryの`core.hooksPath=.githooks`と`harness.python`を設定し、PowerShell launcherとdoctorから読戻した。
@@ -28,9 +28,9 @@ AGENTS、Claude/Cursor入口、start/finish Skills、Git guard、hooks bootstrap
 
 - GitHub connectorから対象private repositoryへの接続を確認し、ユーザーの反映許可後に[導入Issue #1](https://github.com/shinma06/my-minimalX-jp-mod/issues/1)とdevelopを作成した。Issueにはtype/priority/status labelと所有claimを登録・読戻した。
 - main/developのrulesets確認はGitHubから403（private repositoryにはProへのアップグレードが必要）となった。公開設定・契約は変更していない。設定案は保存済み、サーバー保護は未適用。GitHub CLIはこのsessionのPATHにないが、connectorと通常のGitを利用する。
-- 独立レビュー、GitHub Actionsの実run、クライアント再起動後のSkills読込は未検証。
+- [Draft PR #2](https://github.com/shinma06/my-minimalX-jp-mod/pull/2)をdevelopへ提出。`f3a8f2aec61e669f6ebb4c48680692dd0055e7ec`の[CI run](https://github.com/shinma06/my-minimalX-jp-mod/actions/runs/37007870549)でWindows/UbuntuとPR policyの成功を確認した。後続HEADの最新結果はPRを正本とする。独立レビュー、クライアント再起動後のSkills読込は未検証。
 - 自動coordinator、`Agent review`サーバーgate、trusted coordinatorによる自動mergeは未導入。固定候補promotion検査は実装し、統合判断と別sessionレビューはPMが行う。参照元の完全自動運用とは区別する。
 - WindowsのPOSIX private registryは明示拒否。GUI leaseとは別機能であり、手動引継ぎは利用できる。
-- GUI比較はUI-001がblocked、残Caseはpending。詳細は[検証記録](verification/README.md)。
+- GUI比較はUI-001がblocked、残Caseはpending。[QA Issue #3](https://github.com/shinma06/my-minimalX-jp-mod/issues/3)へ引き継いだ。詳細は[検証記録](verification/README.md)。
 
 作業branchは `codex/1-agent-harness`、targetはdevelop。固定差分レビュー・Draft PR・CIの現行状態はIssue/PRを正本とする。mainへの統合と独立レビューはこの導入操作だけで完了扱いにしない。原典の手順を追加の通知・定期実行の承認として扱わない。

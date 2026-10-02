@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import promotion
@@ -16,6 +17,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class PromotionTest(unittest.TestCase):
+    def test_only_observed_legacy_base_uses_complete_initial_case_set(self):
+        self.assertEqual(promotion.base_case_ids('.', promotion.LEGACY_BASE),
+                         {f'UI-{i:03}' for i in range(1, 11)})
+        with patch.object(promotion, 'read_json', side_effect=ValueError('missing registry')):
+            with self.assertRaisesRegex(ValueError, 'missing registry'):
+                promotion.base_case_ids('.', 'a' * 40)
+
     def test_fixed_candidate_all_cases_and_post_freeze_mutations(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

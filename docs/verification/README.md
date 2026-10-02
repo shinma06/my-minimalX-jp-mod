@@ -27,7 +27,7 @@ mainをdevelopへ同期後、対象develop SHAとmain SHAを固定し、候補�
 
 候補以降の差分は`cases.json`の結果と`promotion.json`だけにする。`Integration: promotion`のPRでpolicyが候補の祖先関係、mainの移動、Case定義変更・不足、配布物hashの相違、未合格Caseを拒否する。packageは候補のGit blobから標準ZIP形式で再構成し、PR内のビルドscriptをこの判定のために実行しない。実機へはその候補から作った同じhashの成果物をロードする。
 
-初回導入時はmainにCase正本がまだないため、そのままpromotionは行えない。管理ツールのみのbootstrap PRを先にmainへ入れ、製品修正はdevelopの実装PRに分ける。[GitHubセットアップ](../setup/github.md)を参照。
+初回の旧main `3c3cb11b9d290351b72be8bdb06549d24cddd4aa` にはCase正本がないため、この確認済みSHAに限りUI-001〜UI-010の全10件を既存の必須Caseとして扱う。GUI合格、候補固定、hash、全commit、独立レビューは省略しない。それ以外のbaseで台帳が欠落していれば拒否する。[GitHubセットアップ](../setup/github.md)を参照。
 
 ## 初回観察（2026-10-02）
 

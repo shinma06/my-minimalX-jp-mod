@@ -13,6 +13,15 @@ from verification import validate
 
 CASE_PATH = 'docs/verification/cases.json'
 MANIFEST_PATH = 'docs/verification/promotion.json'
+LEGACY_BASE = '3c3cb11b9d290351b72be8bdb06549d24cddd4aa'
+
+
+def base_case_ids(repo, base):
+    # The observed pre-harness main has no case registry. Its first promotion still
+    # requires the entire initial acceptance set; unknown missing registries fail.
+    if base == LEGACY_BASE:
+        return {f'UI-{number:03}' for number in range(1, 11)}
+    return {c['id'] for c in read_json(repo, base, CASE_PATH)['cases']}
 
 
 def git(repo, *args):
@@ -85,8 +94,7 @@ def verify(repo, *, head, base, cases, candidate_record, develop):
     if definitions(cases) != definitions(original):
         raise ValueError('Case definitions changed after candidate freeze')
     # A previously required case cannot disappear during promotion.
-    base_cases = read_json(repo, base, CASE_PATH)
-    if not {c['id'] for c in base_cases['cases']} <= set(expected['case_ids']):
+    if not base_case_ids(repo, base) <= set(expected['case_ids']):
         raise ValueError('Candidate removed a base case; review the case retirement separately')
     errors = validate(cases, candidate=candidate, artifact_hash=expected['artifact_sha256'])
     if errors:
