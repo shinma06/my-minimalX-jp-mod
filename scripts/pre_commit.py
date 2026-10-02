@@ -8,14 +8,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from validate_skin import ARTIFACT_NAME, builder, validate_git_package, validate_source
 
+BUILD_INPUTS = ['build-vlt.py', 'scripts/validate_skin.py']
+
 
 def main():
     staged = subprocess.check_output(['git', 'diff', '--cached', '--name-only', '-z'], cwd=ROOT).decode().split('\0')
-    rebuild = any(p.startswith('src/') or p == 'build-vlt.py' for p in staged)
+    rebuild = any(p.startswith('src/') or p in BUILD_INPUTS for p in staged)
     if not rebuild and ARTIFACT_NAME not in staged:
         return 0
     if rebuild:
-        if subprocess.run(['git', 'diff', '--quiet', '--', 'src', 'build-vlt.py'], cwd=ROOT).returncode:
+        if subprocess.run(['git', 'diff', '--quiet', '--', 'src', *BUILD_INPUTS], cwd=ROOT).returncode:
             raise ValueError('Unstaged skin/build changes exist; stage the intended complete source before commit')
         if subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', '--', 'src'], cwd=ROOT).strip():
             raise ValueError('Untracked source files exist; stage intended assets before packaging')

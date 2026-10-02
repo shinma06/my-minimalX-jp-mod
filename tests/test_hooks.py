@@ -41,10 +41,10 @@ class HookTest(unittest.TestCase):
             self.assertIn('Issue branch', denied.stderr)
             run('git', 'switch', '-c', 'codex/12-sample')
             run('git', 'commit', '-qm', 'package')
-            self.assertTrue((root / 'My-MinimalX-JPMod.vlt').is_file())
-            self.assertIn('My-MinimalX-JPMod.vlt', run('git', 'ls-files').stdout)
+            self.assertTrue((root / 'VLC-WMP-Video.vlt').is_file())
+            self.assertIn('VLC-WMP-Video.vlt', run('git', 'ls-files').stdout)
             self.assertEqual(run('git', 'status', '--porcelain').stdout, '')
-            package = root / 'My-MinimalX-JPMod.vlt'
+            package = root / 'VLC-WMP-Video.vlt'
             good = package.read_bytes()
             for damage in ['corrupt', 'stale', 'extra', 'missing']:
                 with self.subTest(package=damage):
@@ -75,6 +75,13 @@ class HookTest(unittest.TestCase):
             run('git', 'add', 'src')
             xml.write_text('<Theme version="2.0"><ThemeInfo name="unstaged"/></Theme>')
             denied = run('git', 'commit', '-qm', 'reject mixed source', ok=False)
+            self.assertIn('Unstaged skin/build', denied.stderr)
+            run('git', 'restore', '--staged', '--worktree', '--', 'src')
+            contract = root / 'scripts/validate_skin.py'
+            contract.write_text(contract.read_text(encoding='utf-8') + '\n# staged contract change\n', encoding='utf-8')
+            run('git', 'add', 'scripts/validate_skin.py')
+            contract.write_text(contract.read_text(encoding='utf-8') + '# unstaged contract change\n', encoding='utf-8')
+            denied = run('git', 'commit', '-qm', 'reject mixed build contract', ok=False)
             self.assertIn('Unstaged skin/build', denied.stderr)
             remote = root / 'remote.git'
             run('git', 'init', '--bare', '-q', str(remote))

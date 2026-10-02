@@ -11,6 +11,8 @@ python scripts/bootstrap.py
 ./scripts/python.ps1 build-vlt.py --output-dir .harness-local/dist
 ```
 
+生成物は `.harness-local/dist/VLC-WMP-Video.vlt`。実機受入には固定候補コミットに追跡された同名の配布物を使う。既存checkoutに残る旧名の `.vlt` は現行配布物として使用しない。
+
 Git Bashでは `bash scripts/python.sh scripts/check.py`。runtimeを移した場合は新しいPythonでbootstrapを再実行する。`HARNESS_PYTHON` でそのセッションだけ指定することもできる。bootstrapは他のcustom hooksを検出した場合に上書きせず終了する。旧`install-hooks.sh`も同じbootstrapへの入口。
 
 ## Computer Use
